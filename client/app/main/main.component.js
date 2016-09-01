@@ -10,7 +10,7 @@ export class MainController {
     this.socket = socket;
     this.departments = [
       {name: 'mjen', image: 'mjen'},
-      {name: 'mjss', image: 'MJSS'},
+      {name: 'mjss', image: 'mjss'},
       {name: 'mjal', image: 'MJAL'},
       {name: 'reforma', image: 'ref1'}
     ];
