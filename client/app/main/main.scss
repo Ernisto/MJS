@@ -5,6 +5,7 @@
 #banner {
   border-bottom: none;
   margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 #banner h1 {
@@ -24,4 +25,21 @@
 
 .navbar-text {
   margin-left: 15px;
+}
+
+.department-block {
+  height: 140px;
+  text-align: center;
+
+  img {
+    position: absolute;
+    height: 90px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
 }
