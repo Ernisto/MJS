@@ -11,7 +11,7 @@ export class MainController {
     this.departments = [
       {name: 'mjen', image: 'mjen'},
       {name: 'mjss', image: 'mjss'},
-      {name: 'mjal', image: 'MJAL'},
+      {name: 'mjal', image: 'mjal'},
       {name: 'reforma', image: 'ref1'}
     ];
     this.sayHello = function (element) {
