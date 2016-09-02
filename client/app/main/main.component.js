@@ -12,7 +12,7 @@ export class MainController {
       {name: 'mjen', image: 'mjen'},
       {name: 'mjss', image: 'mjss'},
       {name: 'mjal', image: 'mjal'},
-      {name: 'reforma', image: 'ref1'}
+      {name: 'reforma', image: 'reforma'}
     ];
     this.sayHello = function (element) {
       console.log(element);
