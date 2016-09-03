@@ -6,9 +6,11 @@ const uiRouter = require('angular-ui-router');
 import routes from './department.routes';
 
 export class DepartmentComponent {
-  /*@ngInject*/
-  constructor() {
-    this.message = 'Hello';
+
+  constructor($stateParams) {
+    'ngInject';
+
+    this.department = $stateParams.department;
   }
 }
 
@@ -17,6 +19,6 @@ export default angular.module('mjsApp.department', [uiRouter])
   .component('department', {
     template: require('./department.html'),
     controller: DepartmentComponent,
-    controllerAs: 'departmentCtrl'
+    controllerAs: 'deptCtrl'
   })
   .name;
