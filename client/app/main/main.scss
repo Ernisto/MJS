@@ -31,15 +31,11 @@
   height: 140px;
   text-align: center;
 
-  img {
+  svg {
     position: absolute;
     height: 90px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  img:hover {
-    cursor: pointer;
   }
 }
