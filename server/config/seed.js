@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Journal from '../api/journal/journal.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -56,4 +57,24 @@ User.find({}).remove()
     .then(() => {
       console.log('finished populating users');
     });
+  });
+
+Journal.find({}).remove()
+  .then(() => {
+    Journal.create({
+      title: 'Manas Journal of Engineering',
+      abbreviation: 'MJEN'
+    }, {
+      title: 'Manas Journal of Social Studies',
+      abbreviation: 'MJSS'
+    }, {
+      title: 'Manas Journal of Agriculture and Life Sciences',
+      abbreviation: 'MJAL'
+    }, {
+      title: 'MANAS Journal of Economics and Administrative Science',
+      abbreviation: 'REFORMA'
+    })
+      .then(() => {
+        console.log('finished populating journals');
+      })
   });
