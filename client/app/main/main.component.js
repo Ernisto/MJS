@@ -15,10 +15,10 @@ export class MainController {
   }
 
   $onInit() {
-    this.$http.get('/api/things')
+    this.$http.get('/api/journals')
       .then(response => {
-        this.awesomeThings = response.data;
-        this.socket.syncUpdates('thing', this.awesomeThings);
+        this.journals = response.data;
+        this.socket.syncUpdates('journal', this.journals);
       });
   }
 

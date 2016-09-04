@@ -23,7 +23,7 @@ html, body {
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
-@import 'department/department';
+@import 'journal/journal';
 @import 'main/main';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
