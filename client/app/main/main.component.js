@@ -8,15 +8,6 @@ export class MainController {
   constructor($http, $scope, socket) {
     this.$http = $http;
     this.socket = socket;
-    this.departments = [
-      {name: 'mjen', image: 'mjen'},
-      {name: 'mjss', image: 'mjss'},
-      {name: 'mjal', image: 'mjal'},
-      {name: 'reforma', image: 'reforma'}
-    ];
-    this.sayHello = function (element) {
-      console.log(element);
-    };
 
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');

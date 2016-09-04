@@ -36,7 +36,7 @@ angular.module('mjsApp', [
     // ngMessages,
 
     // ngValidationMatch,
-    _Auth, account, admin, navbar, footer, main, department, constants, socket, util
+    _Auth, account, admin, navbar, footer, main, constants, socket, util
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
