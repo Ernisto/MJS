@@ -78,6 +78,14 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+// Gets a single Journal from the DB by abbreviation
+export function getJournalByAbbreviation(req, res) {
+  return Journal.findOne({abbreviation: req.params.abbreviation.toUpperCase()}).exec()
+    .then(handleEntityNotFound(res))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 // Creates a new Journal in the DB
 export function create(req, res) {
   return Journal.create(req.body)
