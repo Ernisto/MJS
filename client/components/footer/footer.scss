@@ -1,5 +1,15 @@
 footer.footer {
   text-align: center;
-  padding: 10px 0 0;
   border-top: 1px solid #E5E5E5;
+  height: 20px;
+  background-color: #f8f8f8;
+
+  .container {
+    height: 100%;
+  }
+
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
 }
