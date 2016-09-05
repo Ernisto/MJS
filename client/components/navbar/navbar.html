@@ -18,11 +18,36 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">{{'SIGN_UP' | translate}}</a></li>
-        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">{{'LOGIN' | translate}}</a></li>
+        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active">
+          <a ui-sref="signup">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            {{'SIGN_UP' | translate}}
+          </a>
+        </li>
+        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active">
+          <a ui-sref="login">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            {{'LOGIN' | translate}}
+          </a>
+        </li>
         <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Hello {{ $ctrl.getCurrentUser().name }}</p> </li>
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+        <li>
+          <div class="language-container">
+            <div class="flag flag-{{$ctrl.currentLanguage}}" ng-click="$ctrl.toggleLanguage()" aria-label="sdafasdf"></div>
+            <ul class="languages-list" ng-show="$ctrl.languagesListExpanded">
+              <li>
+                <div ng-repeat="(short, full) in $ctrl.languages"
+                     ng-if="short != $ctrl.currentLanguage"
+                     ng-click="$ctrl.setLanguage(short)"
+                     class="flag flag-{{short}}">
+                  <div class="language-name">{{full}}</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

@@ -47,6 +47,22 @@
   }
 }
 
+.language-container {
+  padding: 9px 15px;
+  cursor: pointer;
+
+  ul.languages-list {
+    position: absolute;
+    list-style: none;
+    padding-left: 0;
+
+    .language-name {
+      padding: 6px 34px;
+
+    }
+  }
+}
+
 .flag {
   width: 32px;
   height: 32px;

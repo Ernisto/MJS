@@ -8,7 +8,7 @@ export function routeConfig($urlRouterProvider, $locationProvider, $translatePro
     suffix: '.json'
   });
 
-  $translateProvider.preferredLanguage('en');
+  $translateProvider.preferredLanguage('gb');
 
   $urlRouterProvider.otherwise('/');
 
