@@ -29,6 +29,7 @@ import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 import journal from './journal/journal.component';
+import dashboard from './dashboard/dashboard.component';
 
 import './app.scss';
 
@@ -38,7 +39,7 @@ angular.module('mjsApp', [
   // ngMessages,
 
   // ngValidationMatch,
-  _Auth, account, admin, navbar, footer, main, constants, socket, util, journal,
+  _Auth, account, admin, navbar, footer, main, constants, socket, util, dashboard, journal
 ])
   .config(routeConfig)
   .run(function ($rootScope, $location, Auth) {
