@@ -33,7 +33,9 @@ export default function(app) {
   }
 
   app.set('appPath', path.join(config.root, 'client'));
+  app.set('archivePath', path.join(config.root, '/server/public'));
   app.use(express.static(app.get('appPath')));
+  app.use(express.static(app.get('archivePath')));
   app.use(morgan('dev'));
 
   app.set('views', config.root + '/server/views');
