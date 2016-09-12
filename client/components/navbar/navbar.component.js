@@ -18,14 +18,9 @@ export class NavbarComponent {
     this.currentLanguage = $translate.proposedLanguage();
   }
 
-  toggleLanguage(){
-    this.languagesListExpanded = !this.languagesListExpanded;
-  }
-
   setLanguage(lang){
     this.currentLanguage = lang;
     this.$translate.use(lang);
-    this.toggleLanguage();
   }
 
 }
