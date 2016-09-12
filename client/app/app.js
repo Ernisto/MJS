@@ -30,6 +30,7 @@ import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 import journal from './journal/journal.component';
 import dashboard from './dashboard/dashboard.component';
+import './scripts';
 
 import './app.scss';
 

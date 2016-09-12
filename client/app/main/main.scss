@@ -50,23 +50,57 @@
 .language-container {
   padding: 9px 15px;
   cursor: pointer;
+}
 
-  ul.languages-list {
-    position: absolute;
-    list-style: none;
-    padding-left: 0;
+.dropdown-menu {
+  position: absolute;
+  border-radius: 0;
+  list-style: none;
+  padding-left: 0;
+  margin-top: -4px!important;
 
-    .language-name {
-      padding: 6px 34px;
-
-    }
+  .language-name {
+    padding-left: 40px;
   }
+
+  .language-flag {
+    float: left;
+  }
+}
+
+.dropdown-menu li a {
+  line-height: 32px;
+  padding: 2px 20px;
+}
+.dropdown-menu:before{
+  position: absolute;
+  top: -7px;
+  right: 23px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+  border-left: 7px solid transparent;
+  content: '';
+}
+.dropdown-menu:after{
+  position: absolute;
+  top: -6px;
+  right: 24px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
 }
 
 .flag {
   width: 32px;
   height: 32px;
   background:url('/assets/images/flags.png') no-repeat center;
+}
+
+.flag:hover {
+  cursor: pointer;
 }
 
 .flag.flag-ad {background-position: -32px 0}

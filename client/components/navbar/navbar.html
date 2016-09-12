@@ -33,20 +33,21 @@
         <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Hello {{ $ctrl.getCurrentUser().name }}</p> </li>
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
-        <li>
+        <li class="language-block">
           <div class="language-container">
-            <div class="flag flag-{{$ctrl.currentLanguage}}" ng-click="$ctrl.toggleLanguage()" aria-label="sdafasdf"></div>
-            <ul class="languages-list" ng-show="$ctrl.languagesListExpanded">
-              <li>
-                <div ng-repeat="(short, full) in $ctrl.languages"
-                     ng-if="short != $ctrl.currentLanguage"
-                     ng-click="$ctrl.setLanguage(short)"
-                     class="flag flag-{{short}}">
-                  <div class="language-name">{{full}}</div>
-                </div>
-              </li>
-            </ul>
+            <div class="flag flag-{{$ctrl.currentLanguage}}"></div>
           </div>
+          <ul id="languages-list" class="dropdown-menu">
+            <li ng-repeat="(short, full) in $ctrl.languages"
+                class="languages-item"
+                ng-if="short != $ctrl.currentLanguage"
+                ng-click="$ctrl.setLanguage(short)">
+              <a href="">
+                <div class="language-flag flag flag-{{short}}"></div>
+                <div class="language-name">{{full}}</div>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
