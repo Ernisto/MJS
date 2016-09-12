@@ -11,7 +11,7 @@ export class NavbarComponent {
     this.languagesListExpanded = false;
     this.$translate = $translate;
     this.$http = $http;
-    this.$http.get('/languages.json')
+    this.$http.get('/translation/languages.json')
       .then( (response) => {
         this.languages = response.data;
       });
