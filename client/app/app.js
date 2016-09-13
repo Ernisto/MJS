@@ -8,6 +8,8 @@ import ngSanitize from 'angular-sanitize';
 import 'angular-socket-io';
 import 'angular-translate';
 import 'angular-translate-loader-static-files';
+import 'angular-sweetalert';
+import 'sweetalert';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -36,7 +38,8 @@ import './app.scss';
 
 angular.module('mjsApp', [
   // ngAnimate,
-  ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap, 'pascalprecht.translate',
+  ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
+  'pascalprecht.translate', 'oitozero.ngSweetAlert',
   // ngMessages,
 
   // ngValidationMatch,

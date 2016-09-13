@@ -20,6 +20,11 @@ html, body {
   height: 100%;
 }
 
+body.stop-scrolling {
+  height:auto !important;
+  overflow:visible !important;
+}
+
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
@@ -28,4 +33,5 @@ html, body {
 @import 'main/main';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
+@import '../../node_modules/sweetalert/dist/sweetalert.css';
 /* endinject */
