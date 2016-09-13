@@ -9,6 +9,7 @@ import 'angular-socket-io';
 import 'angular-translate';
 import 'angular-translate-loader-static-files';
 import 'angular-sweetalert';
+import 'angular-local-storage';
 import 'sweetalert';
 
 import uiRouter from 'angular-ui-router';
@@ -39,7 +40,7 @@ import './app.scss';
 angular.module('mjsApp', [
   // ngAnimate,
   ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
-  'pascalprecht.translate', 'oitozero.ngSweetAlert',
+  'pascalprecht.translate', 'oitozero.ngSweetAlert', 'LocalStorageModule',
   // ngMessages,
 
   // ngValidationMatch,

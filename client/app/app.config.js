@@ -1,7 +1,10 @@
 'use strict';
 
-export function routeConfig($urlRouterProvider, $locationProvider, $translateProvider) {
+export function routeConfig($urlRouterProvider, $locationProvider, $translateProvider, localStorageServiceProvider) {
   'ngInject';
+
+  localStorageServiceProvider
+    .setPrefix('mjs');
 
   $translateProvider.useStaticFilesLoader({
     prefix: '/translation/locale-',
