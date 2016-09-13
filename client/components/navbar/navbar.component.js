@@ -18,6 +18,7 @@ export class NavbarComponent {
     this.localStorageService = localStorageService;
     this.currentLanguage = this.localStorageService.get('selected-lang') ?
       this.localStorageService.get('selected-lang') : $translate.proposedLanguage();
+    this.setLanguage(this.currentLanguage);
   }
 
   setLanguage(lang){
