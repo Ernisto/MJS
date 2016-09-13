@@ -2,7 +2,7 @@
 
 export class NavbarComponent {
 
-  constructor(Auth, $translate, $http) {
+  constructor($scope, Auth, $translate, $http, localStorageService) {
     'ngInject';
 
     this.isLoggedIn = Auth.isLoggedInSync;
@@ -15,12 +15,15 @@ export class NavbarComponent {
       .then( (response) => {
         this.languages = response.data;
       });
-    this.currentLanguage = $translate.proposedLanguage();
+    this.localStorageService = localStorageService;
+    this.currentLanguage = this.localStorageService.get('selected-lang') ?
+      this.localStorageService.get('selected-lang') : $translate.proposedLanguage();
   }
 
   setLanguage(lang){
     this.currentLanguage = lang;
     this.$translate.use(lang);
+    this.localStorageService.set('selected-lang', lang);
   }
 
 }
