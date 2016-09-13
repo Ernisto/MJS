@@ -10,7 +10,7 @@ export class MainController {
     this.socket = socket;
 
     $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('journal');
     });
   }
 
@@ -20,19 +20,6 @@ export class MainController {
         this.journals = response.data;
         this.socket.syncUpdates('journal', this.journals);
       });
-  }
-
-  addThing() {
-    if (this.newThing) {
-      this.$http.post('/api/things', {
-        name: this.newThing
-      });
-      this.newThing = '';
-    }
-  }
-
-  deleteThing(thing) {
-    this.$http.delete('/api/things/' + thing._id);
   }
 }
 
