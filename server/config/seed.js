@@ -3,7 +3,7 @@
  * to disable, edit config/environment/index.js, and set `seedDB: false`
  */
 
-'use strict'; 
+'use strict';
 import User from '../api/user/user.model';
 import Journal from '../api/journal/journal.model';
 
@@ -29,17 +29,21 @@ User.find({}).remove()
 Journal.find({}).remove()
   .then(() => {
     Journal.create({
-      title: 'Manas Journal of Engineering',
-      abbreviation: 'MJEN'
+      'title': 'Manas Journal of Engineering',
+      'abbreviation': 'MJEN',
+      'about': 'google',
+      'aim-scope': 'text',
+      'terms-conditions': 'do not copy paste',
+      'abstract-index': 'abstract index'
     }, {
-      title: 'Manas Journal of Social Studies',
-      abbreviation: 'MJSS'
+      'title': 'Manas Journal of Social Studies',
+      'abbreviation': 'MJSS'
     }, {
-      title: 'Manas Journal of Agriculture and Life Sciences',
-      abbreviation: 'MJAL'
+      'title': 'Manas Journal of Agriculture and Life Sciences',
+      'abbreviation': 'MJAL'
     }, {
-      title: 'MANAS Journal of Economics and Administrative Science',
-      abbreviation: 'REFORMA'
+      'title': 'MANAS Journal of Economics and Administrative Science',
+      'abbreviation': 'REFORMA'
     })
       .then(() => {
         console.log('finished populating journals');
