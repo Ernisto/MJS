@@ -7,7 +7,7 @@ import routes from './journal.routes';
 
 export class JournalComponent {
   /*@ngInject*/
-  constructor($stateParams, $http, $state) {
+  constructor($stateParams, $http, $state, $translate) {
     'ngInject';
     $http.get('/api/journals/abbreviation/' + $stateParams.journal)
       .then(response => {
@@ -17,6 +17,12 @@ export class JournalComponent {
           $state.go('main');
         }
       });
+    this.$translate = $translate;
+    this.currentPage = 'about';
+  }
+
+  showPage(title){
+    this.currentPage = title;
   }
 }
 
