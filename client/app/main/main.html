@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="department-block col-md-4 col-lg-3 col-sm-6" ng-repeat="journal in $ctrl.journals">
-        <a href="/departments/{{journal.abbreviation | lowercase}}">
+        <a href="/journal/{{journal.abbreviation | lowercase}}">
           <svg viewBox="0 0 560 206"
                ng-init="selectedJournal = journal.abbreviation"
                ng-mouseover="selectedJournal = journal.abbreviation + '-hover'"

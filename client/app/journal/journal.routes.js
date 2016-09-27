@@ -4,7 +4,7 @@ export default function($stateProvider) {
   'ngInject';
   $stateProvider
     .state('journal', {
-      url: '/departments/:journal',
+      url: '/journal/:journal',
       template: '<journal></journal>'
     });
 }
