@@ -70,6 +70,13 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
+// Get archives by journal
+export function getArchivesByJournal(req, res) {
+  return Archive.find({'journal': req.params.journal.toLowerCase()}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 // Gets a single Archive from the DB
 export function show(req, res) {
   return Archive.findById(req.params.id).exec()
