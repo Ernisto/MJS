@@ -1,0 +1,35 @@
+<div class="archive-detail">
+  <div class="archive-title">{{ArchiveCtrl.archive.title}}</div>
+
+  <div class="archive-authors col-md-12">
+    <div class="left col-md-1">Authors: </div>
+    <div class="right col-md-11"><i>{{ArchiveCtrl.archive.authors}} ({{ArchiveCtrl.archive.year | date:'yyyy'}})</i></div>
+  </div>
+
+  <div class="archive-abstract col-md-12">
+    <div class="left col-md-1">Abstract: </div>
+    <div class="right col-md-11">{{ArchiveCtrl.archive.abstract}}</div>
+  </div>
+
+  <div class="archive-keywords col-md-12">
+    <div class="left col-md-1">Keywords: </div>
+    <div class="right col-md-11">
+      <span class="archive-keyword" ng-repeat="keyword in ArchiveCtrl.archive.keywords">{{keyword}}<span ng-if="!$last">, </span></span>
+    </div>
+  </div>
+
+  <div class="archive-references col-md-12">
+    <div class="left col-md-12">References: </div>
+    <div class="reference-item col-md-12" ng-repeat="reference in ArchiveCtrl.archive.references">
+      <div class="reference-order">[{{$index + 1}}]</div>
+      <div class="reference-title">{{reference}}</div>
+    </div>
+  </div>
+
+  <div class="archive-file col-md-12">
+    <div class="left col-md-12">File: </div>
+    <img ng-src="/assets/images/{{ArchiveCtrl.fileExtension}}.png">
+    <a ng-href="{{ArchiveCtrl.archive.file}}" target="_blank">Open File</a> |
+    <a ng-href="{{ArchiveCtrl.archive.file}}" target="_blank" download>Download File</a>
+  </div>
+</div>
