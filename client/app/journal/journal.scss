@@ -12,3 +12,92 @@
 .navigation-menu {
   width: 250px;
 }
+
+.archive-detail {
+  font-family: 'Roboto Slab';
+}
+
+.left {
+  font-weight: bold;
+  padding-left: 0;
+}
+
+.right {
+
+}
+
+.archive-item {
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: 'Roboto Slab';
+  font-size: 15px;
+}
+
+.archive-title {
+  font-size: 25px;
+}
+
+.archive-authors {
+  padding: 20px 0 0;
+  font-size: 15px;
+}
+
+.archive-abstract {
+  padding: 15px 0 0;
+  font-size: 15px;
+}
+
+.archive-keywords {
+  padding: 15px 0 0;
+  font-size: 15px;
+
+  .archive-keyword {
+    cursor: pointer;
+  }
+  .archive-keyword:hover {
+    text-decoration: underline;
+    color: #265c9e;
+  }
+}
+
+.archive-references {
+  font-size: 15px;
+  padding: 15px 0 0;
+
+  .reference-item {
+    padding: 3px 0 3px;
+    cursor: pointer;
+
+    .reference-order{
+      width: 4%;
+      float: left;
+    }
+
+    .reference-title {
+      width: 96%;
+      float: right;
+    }
+  }
+
+  .reference-item:hover {
+    color: #265c9e;
+
+    .reference-title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.archive-file {
+  font-size: 15px;
+  padding: 15px 0;
+
+  img {
+    width: 50px;
+    margin: 10px 10px 10px 0;
+  }
+}
+
+.archive-item:hover {
+  background-color: #c0ddb4;
+}

@@ -8,11 +8,11 @@
         <a href="">Journal And Information</a>
       </h4>
       <ul>
-        <li><a href="#" ng-click="journalCtrl.showPage('about')">About this journal</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('aim-scope')">Aim and scope</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('terms-conditions')">Terms and Conditions</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('abstract-index')">Abstracting and Indexing</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('editorial-board')">Editorial board</a></li>
+        <li><a ui-sref="journal.about" ng-click="journalCtrl.showPage('about')">About this journal</a></li>
+        <li><a ui-sref="journal.aim-scope"  ng-click="journalCtrl.showPage('aim-scope')">Aim and scope</a></li>
+        <li><a ui-sref="journal.terms-conditions" ng-click="journalCtrl.showPage('terms-conditions')">Terms and Conditions</a></li>
+        <li><a ui-sref="journal.abstract-index" ng-click="journalCtrl.showPage('abstract-index')">Abstracting and Indexing</a></li>
+        <li><a ui-sref="journal.editorial-board" ng-click="journalCtrl.showPage('editorial-board')">Editorial board</a></li>
       </ul>
     </div>
 
@@ -21,9 +21,9 @@
         <a href="">Volumes and issues</a>
       </h4>
       <ul>
-        <li><a href="#" ng-click="journalCtrl.showPage('last-volume-cover')">Last volume cover</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('archive')">Archive</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('old-archives')">Old archives</a></li>
+        <li><a ui-sref="journal.last-volume-cover">Last volume cover</a></li>
+        <li><a ui-sref="journal.archives">Archives</a></li>
+        <li><a ui-sref="journal.old-archives">Old archives</a></li>
       </ul>
     </div>
 
@@ -32,46 +32,14 @@
         <a href="">Submit to this journal</a>
       </h4>
       <ul>
-        <li><a href="#" ng-click="journalCtrl.showPage('rules')">Rules</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('submit')">Submit</a></li>
-        <li><a href="#" ng-click="journalCtrl.showPage('author-instructions')">Instructions for authors</a></li>
+        <li><a ui-sref="journal.rules">Rules</a></li>
+        <li><a ui-sref="journal.submit">Submit</a></li>
+        <li><a ui-sref="journal.instructions">Instructions for authors</a></li>
       </ul>
     </div>
   </div>
 
   <div class="col-md-9">
-    <div ng-if="journalCtrl.currentPage == 'about'">
-      {{journalCtrl.journal.about[journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'aim-scope'">
-      {{journalCtrl.journal['aim-scope'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'terms-conditions'">
-      {{journalCtrl.journal['terms-conditions'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'abstract-index'">
-      {{journalCtrl.journal['abstract-index'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'editorial-board'">
-      {{journalCtrl.journal['editorial-board'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'last-volume-cover'">
-      {{journalCtrl.journal['last-volume-cover'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'archive'">
-      {{journalCtrl.journal['archive'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'old-archives'">
-      {{journalCtrl.journal['old-archives'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'rules'">
-      {{journalCtrl.journal['rules'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'submit'">
-      {{journalCtrl.journal['submit'][journalCtrl.$translate.use()]}}
-    </div>
-    <div ng-if="journalCtrl.currentPage == 'author-instructions'">
-      {{journalCtrl.journal['author-instructions'][journalCtrl.$translate.use()]}}
-    </div>
+    <div ui-view></div>
   </div>
 </div>

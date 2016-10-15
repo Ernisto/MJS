@@ -7,7 +7,7 @@ import routes from './journal.routes';
 
 export class JournalComponent {
   /*@ngInject*/
-  constructor($stateParams, $http, $state, $translate) {
+  constructor($stateParams, $http, $state, $translate, $rootScope) {
     'ngInject';
     $http.get('/api/journals/abbreviation/' + $stateParams.journal)
       .then(response => {
@@ -17,12 +17,25 @@ export class JournalComponent {
           $state.go('main');
         }
       });
+
+    $http.get('/api/archives/journals/' + $stateParams.journal)
+      .then(response => {
+        this.archives = response.data;
+      }, response => {
+        if(response.status == 404) {
+          $state.go('main');
+        }
+      });
     this.$translate = $translate;
-    this.currentPage = 'about';
+    this.$rootScope = $rootScope;
   }
 
   showPage(title){
     this.currentPage = title;
+  }
+
+  setCurrentArchive(archive) {
+    this.$rootScope.archive = archive;
   }
 }
 
