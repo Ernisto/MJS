@@ -4,6 +4,30 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import '~font-awesome/scss/font-awesome';
 @import '~sweetalert/dist/sweetalert.css';
 
+@font-face {
+  font-family: "Roboto Slab";
+  font-weight: 100;
+  src: url("/assets/fonts/RobotoSlab/RobotoSlab-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-weight: 300;
+  src: url("/assets/fonts/RobotoSlab/RobotoSlab-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  src: url("/assets/fonts/RobotoSlab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  src: url("/assets/fonts/RobotoSlab/RobotoSlab-Bold.ttf") format("truetype");
+}
+
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
 
 /**
