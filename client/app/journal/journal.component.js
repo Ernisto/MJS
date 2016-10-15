@@ -28,6 +28,7 @@ export class JournalComponent {
       });
     this.$translate = $translate;
     this.$rootScope = $rootScope;
+    this.$state = $state;
   }
 
   showPage(title){

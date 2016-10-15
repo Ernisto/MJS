@@ -7,6 +7,8 @@
 }
 
 .menu-item {
+  font-family: 'Roboto Slab';
+  padding: 0 0 3px;
 }
 
 .navigation-menu {
@@ -100,4 +102,50 @@
 
 .archive-item:hover {
   background-color: #c0ddb4;
+}
+
+.journal-category {
+  font-size: 20px;
+  color: #777;
+  cursor: default;
+}
+
+.journal-property {
+  color: #777;
+  list-style: none;
+  padding-left: 25px;
+
+  li {
+    padding: 4px 0;
+  }
+
+  li a {
+    color: #8081b1;
+    font-size: 15px;
+    padding: 3px;
+    border-radius: 2px;
+  }
+
+  li a:hover {
+    color: #4ea540;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  li a:focus {
+    text-decoration: none;
+  }
+
+}
+
+.journal-property-active {
+  color: #4ea540;
+
+  a {
+    color: #4ea540 !important;
+    font-weight: 700;
+  }
+}
+
+.journal-content {
 }
