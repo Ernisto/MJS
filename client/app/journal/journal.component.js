@@ -12,7 +12,9 @@ export class JournalComponent {
     $http.get('/api/journals/abbreviation/' + $stateParams.journal)
       .then(response => {
         this.journal = response.data;
-        $state.go('journal.about');
+        if($state.current.name == 'journal') {
+          $state.go('journal.about');
+        }
       }, response => {
         if(response.status == 404) {
           $state.go('main');
