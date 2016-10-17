@@ -15,6 +15,12 @@
           <p>{{journal.title}}</p>
           <a ng-href="/journal/{{journal.abbreviation | lowercase}}/about">View more</a>
         </figcaption>
+        <div class="journal-icon">
+          <i class="fa fa-cogs fa-6" ng-if="journal.abbreviation == 'MJEN'" aria-hidden="true"></i>
+          <i class="fa fa-users fa-6" ng-if="journal.abbreviation == 'MJSS'" aria-hidden="true"></i>
+          <i class="fa fa-leaf fa-6" ng-if="journal.abbreviation == 'MJAL'" aria-hidden="true"></i>
+          <i class="fa fa-line-chart fa-6" ng-if="journal.abbreviation == 'REFORMA'" aria-hidden="true"></i>
+        </div>
       </figure>
     </div>
   </div>
