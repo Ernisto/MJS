@@ -9,7 +9,9 @@ var JournalSchema = new mongoose.Schema({
   'aim-scope': Object,
   'terms-conditions': Object,
   'abstract-index': Object,
-  'editorial-board': Object
+  'editorial-board': Object,
+  'rules': Object,
+  'instructions': Object
 });
 
 export default mongoose.model('Journal', JournalSchema);
