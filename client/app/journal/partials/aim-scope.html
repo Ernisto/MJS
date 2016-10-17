@@ -1,1 +1,5 @@
-{{journalCtrl.journal['aim-scope'][journalCtrl.$translate.use()]}}
+<div ng-bind-html="journalCtrl.renderHTML(journalCtrl.journal['aim-scope'][journalCtrl.$translate.use()])"
+     ng-show="!journalCtrl.editingProperty"></div>
+
+<div ng-include src="'/app/journal/partials/editor.html'"
+     ng-if="journalCtrl.isAdmin()"></div>
