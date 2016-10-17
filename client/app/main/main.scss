@@ -96,8 +96,6 @@
   width: 32px;
   height: 32px;
   background:url('/assets/images/flags.png') no-repeat center;
-  float: left;
-  margin-right: 10px;
 }
 
 .flag:hover {
@@ -335,4 +333,14 @@
   -webkit-transition: font-size 0.2s ease-in-out;
   -moz-transition: font-size 0.2s ease-in-out;
   transition: font-size 0.2s ease-in-out;
+}
+
+@media (max-width: 767px){
+  .flag {
+    width: 32px;
+    height: 32px;
+    background:url('/assets/images/flags.png') no-repeat center;
+    float: left;
+    margin-right: 10px;
+  }
 }
