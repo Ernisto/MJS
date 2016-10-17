@@ -36,8 +36,12 @@
         <li class="language-block">
           <div class="language-container">
             <div class="flag flag-{{$ctrl.currentLanguage}}"></div>
+            <div class="flag flag-{{short}} visible-xs"
+                 ng-if="short != $ctrl.currentLanguage"
+                 ng-click="$ctrl.setLanguage(short)"
+                 ng-repeat="(short, full) in $ctrl.languages"></div>
           </div>
-          <ul id="languages-list" class="dropdown-menu">
+          <ul id="languages-list" class="dropdown-menu hidden-xs">
             <li ng-repeat="(short, full) in $ctrl.languages"
                 class="languages-item"
                 ng-if="short != $ctrl.currentLanguage"
