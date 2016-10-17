@@ -11,7 +11,8 @@ var JournalSchema = new mongoose.Schema({
   'abstract-index': Object,
   'editorial-board': Object,
   'rules': Object,
-  'instructions': Object
+  'instructions': Object,
+  'color': String
 });
 
 export default mongoose.model('Journal', JournalSchema);
