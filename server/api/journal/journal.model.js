@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 
 var JournalSchema = new mongoose.Schema({
-  'title': String,
+  'title': Object,
   'abbreviation': String,
   'about': Object,
   'aim-scope': Object,
