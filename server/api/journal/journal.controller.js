@@ -23,14 +23,14 @@ function respondWithResult(res, statusCode) {
   };
 }
 
-function patchUpdates(patches) {
+function patchUpdates(updates) {
   return function(entity) {
     try {
-      jsonpatch.apply(entity, patches, /*validate*/ true);
+      jsonpatch.apply(entity, updates.patches, /*validate*/ true);
     } catch(err) {
       return Promise.reject(err);
     }
-
+    entity.markModified(updates.property);
     return entity.save();
   };
 }
@@ -108,9 +108,12 @@ export function patch(req, res) {
   if(req.body._id) {
     delete req.body._id;
   }
+
+  var updates = req.body;
+
   return Journal.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
-    .then(patchUpdates(req.body))
+    .then(patchUpdates(updates))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
