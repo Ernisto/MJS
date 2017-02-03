@@ -23,6 +23,8 @@ import {
 } from './app.config';
 
 import _Auth from '../components/auth/auth.module';
+import Modal from '../components/modal/modal.service';
+import wysiwygEditor from '../components/wysiwyg-editor/wysiwyg-editor.directive';
 import account from './account';
 import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
@@ -44,7 +46,7 @@ angular.module('mjsApp', [
   // ngMessages,
 
   // ngValidationMatch,
-  _Auth, account, admin, navbar, footer, main, constants, socket, util, dashboard, journal
+  _Auth, Modal, wysiwygEditor, account, admin, navbar, footer, main, constants, socket, util, dashboard, journal
 ])
   .config(routeConfig)
   .run(function ($rootScope, $location, Auth) {
