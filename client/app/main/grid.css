@@ -100,10 +100,10 @@ figure.effect-bubba:hover img {
 figure.effect-bubba figcaption::before,
 figure.effect-bubba figcaption::after {
 	position: absolute;
-	top: 30px;
-	right: 30px;
-	bottom: 30px;
-	left: 30px;
+	top: 25px;
+	right: 25px;
+	bottom: 25px;
+	left: 25px;
 	content: '';
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;

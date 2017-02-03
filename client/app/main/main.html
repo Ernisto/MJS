@@ -8,18 +8,15 @@
 
 <div class="container">
   <div class="grid col-md-12">
-    <div ng-repeat="journal in $ctrl.journals" class="col-md-4 col-lg-3 col-sm-6">
+    <div ng-repeat="journal in $ctrl.journals | orderBy:'abbreviation':false" class="col-md-4 col-lg-3 col-sm-6">
       <figure class="effect-bubba col-md-12 col-sm-12" ng-style="{'background-color': journal.color}">
         <figcaption>
           <h1>{{journal.abbreviation | uppercase}}</h1>
-          <p>{{journal.title}}</p>
+          <p>{{journal.title[$ctrl.$translate.use()]}}</p>
           <a ng-href="/journal/{{journal.abbreviation | lowercase}}/about">View more</a>
         </figcaption>
         <div class="journal-icon">
-          <i class="fa fa-cogs fa-6" ng-if="journal.abbreviation == 'MJEN'" aria-hidden="true"></i>
-          <i class="fa fa-users fa-6" ng-if="journal.abbreviation == 'MJSS'" aria-hidden="true"></i>
-          <i class="fa fa-leaf fa-6" ng-if="journal.abbreviation == 'MJAL'" aria-hidden="true"></i>
-          <i class="fa fa-line-chart fa-6" ng-if="journal.abbreviation == 'REFORMA'" aria-hidden="true"></i>
+          <i class='fa journal-icon-{{journal.abbreviation | lowercase}} fa-6' aria-hidden="true"></i>
         </div>
       </figure>
     </div>

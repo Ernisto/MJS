@@ -6,7 +6,7 @@
 
 #banner {
   border-bottom: none;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #banner h1 {
@@ -336,6 +336,22 @@
   -webkit-transition: font-size 0.2s ease-in-out;
   -moz-transition: font-size 0.2s ease-in-out;
   transition: font-size 0.2s ease-in-out;
+}
+
+.journal-icon-mjen:before {
+  content: "\F085";
+}
+
+.journal-icon-mjss:before {
+  content: "\F0C0";
+}
+
+.journal-icon-mjal:before {
+  content: "\F06C";
+}
+
+.journal-icon-reforma:before {
+  content: "\F201";
 }
 
 @media (max-width: 767px){
