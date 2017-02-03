@@ -30,8 +30,14 @@ User.find({}).remove()
 Journal.find({}).remove()
   .then(() => {
     Journal.create({
-      'title': 'Manas Journal of Engineering',
+      'title': {
+        'gb': "Manas Journal of Engineering",
+        'ru': "Инженерный журнал университета Манас",
+        'tr': "Manas Universitesi FEN Bilimler dergisi",
+        'kg': "Манас Университетинин Инженердик Журналы"
+      },
       'abbreviation': 'MJEN',
+      'color': '#062568',
       'about': {
         'gb': 'MANAS Journal of Engineering is an international peer-reviewed journal at the field of Engineering Science (Applied Math, Food, Ecology, Chemical and Computer Engineering) which aims to contribute to universal knowledge by publishing original works at a national and international level  with scientific qualifications.',
         'ru': 'MANAS журнал Engineering является международным рецензируемый журнал в области технических наук (прикладной математики, пищевой промышленности, экологии, химической и вычислительной техники), который призван способствовать обеспечению всеобщего знания путем публикации оригинальных работ на национальном и международном уровне с научной квалификации.',
@@ -73,20 +79,55 @@ Journal.find({}).remove()
         'ru': 'Manas Mühendislik Bilimleri Dergisi / Manas Journal of Engineering (MJEN)Sahipleri / OwnersKırgızistan Türkiye Manas Üniversitesi AdınaProf. Dr. Sebahattin BALCIProf. Dr. Asılbek KULMIRZAYEVEditör / EditorProf. Dr. Zafer GÖNÜLALANEditör Yardımcıları / Associate EditorsYard. Doç. Dr. İlhan DOĞANYayın Kurulu / Advisory BoardProf. Dr. Ali Osman SOLAKProf. Dr. Ayhan TUTARProf. Dr. Coşkan ILICALIProf. Dr. Ulan BİRİMKULOVProf. Dr. Avıt ASANOVDoç. Dr. Tamara KARAŞOVAProf. Dr. Zarlık MAYMEKOVAlan Editörleri / Field Editors Prof. Dr. Ali Osman SOLAK (Chemistry and Chemical Engineering) Prof. Dr. Asan ÖMÜRALİYEV (Mathematics, Applied Mathematics and Informatics) Yard. Doç. Dr. İlhan DOĞAN (Biotechnology, Molecular Biology and Genetics) Doç. Dr. Raimbek SULTANOV (Computer Engineering, Information Technology)Yard. Doç. Dr. Emil OMURZAKOĞLU (Nanoscience, Nanothecnology, Nanomaterials)Yayın Sorumlusu / Editorial AssistantsRuslan ADİL AKAY TEGİNCumagül NURAKUNRedaksiyon / RedactionKırgızca : Doç. Dr.Taalaybek ABDİYEVTürkçe : : Öğr.Gör. İsmail ŞEN, Burhanettin ÇAKICIİngilizce : Öğr. Gör. Aida KASİYEVARusça : Anara BAYIZBEKOVAYayın PeriyoduYılda en az iki kez yayımlanan Manas Mühendislik Dergisi hakemli bir dergi olup yayımlanan makaleler en az iki hakem tarafından değerlendirilmektedir.Publication FrequencyManas Journal of Engineering (MJEN) is published at least twice a year, MJEN is a peer reviewed journal.Articles are evaluated by at least two reviewers.This journal was published by Kyrgyz-Turk Manas University, under the name of Fen Bilimleri Dergisi (Journal of Natural Sciences), starting in 2001. In 2013, publication was resumed under the current title, i.e. Manas Journal of Engineering (Manas Mühendislik Dergisi).Bilim Danışma Kurulu / Editorial Advisory BoardProf. Dr. Sebahattin BALCI - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr. Asılbek KULMIRZAYEV - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr.Ali BAHADIR - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr. Gülbübü KURMANBEKOVA - Kyrgyzstan-Turkey Manas University / KyrgyzistanYazışma Adresi / CorrespondenceKırgızistan Türkiye Manas Üniversitesi Mühendislik Dergisi EditörlüğüTınçtık (Mir) Caddesi No 56Bişkek KIRGIZİSTANWeb: http://journals.manas.edu.kg/mjen/index.phpMail: zgonulalan@gmail.com, journals@manas.edu.kgTel : 00996 312 492763Fax: 00996 312 541935ISSN-1694-7398',
         'tr': 'Manas Mühendislik Bilimleri Dergisi / Manas Journal of Engineering (MJEN)Sahipleri / OwnersKırgızistan Türkiye Manas Üniversitesi AdınaProf. Dr. Sebahattin BALCIProf. Dr. Asılbek KULMIRZAYEVEditör / EditorProf. Dr. Zafer GÖNÜLALANEditör Yardımcıları / Associate EditorsYard. Doç. Dr. İlhan DOĞANYayın Kurulu / Advisory BoardProf. Dr. Ali Osman SOLAKProf. Dr. Ayhan TUTARProf. Dr. Coşkan ILICALIProf. Dr. Ulan BİRİMKULOVProf. Dr. Avıt ASANOVDoç. Dr. Tamara KARAŞOVAProf. Dr. Zarlık MAYMEKOVAlan Editörleri / Field Editors Prof. Dr. Ali Osman SOLAK (Chemistry and Chemical Engineering) Prof. Dr. Asan ÖMÜRALİYEV (Mathematics, Applied Mathematics and Informatics) Yard. Doç. Dr. İlhan DOĞAN (Biotechnology, Molecular Biology and Genetics) Doç. Dr. Raimbek SULTANOV (Computer Engineering, Information Technology)Yard. Doç. Dr. Emil OMURZAKOĞLU (Nanoscience, Nanothecnology, Nanomaterials)Yayın Sorumlusu / Editorial AssistantsRuslan ADİL AKAY TEGİNCumagül NURAKUNRedaksiyon / RedactionKırgızca : Doç. Dr.Taalaybek ABDİYEVTürkçe : : Öğr.Gör. İsmail ŞEN, Burhanettin ÇAKICIİngilizce : Öğr. Gör. Aida KASİYEVARusça : Anara BAYIZBEKOVAYayın PeriyoduYılda en az iki kez yayımlanan Manas Mühendislik Dergisi hakemli bir dergi olup yayımlanan makaleler en az iki hakem tarafından değerlendirilmektedir.Publication FrequencyManas Journal of Engineering (MJEN) is published at least twice a year, MJEN is a peer reviewed journal.Articles are evaluated by at least two reviewers.This journal was published by Kyrgyz-Turk Manas University, under the name of Fen Bilimleri Dergisi (Journal of Natural Sciences), starting in 2001. In 2013, publication was resumed under the current title, i.e. Manas Journal of Engineering (Manas Mühendislik Dergisi).Bilim Danışma Kurulu / Editorial Advisory BoardProf. Dr. Sebahattin BALCI - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr. Asılbek KULMIRZAYEV - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr.Ali BAHADIR - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr. Gülbübü KURMANBEKOVA - Kyrgyzstan-Turkey Manas University / KyrgyzistanYazışma Adresi / CorrespondenceKırgızistan Türkiye Manas Üniversitesi Mühendislik Dergisi EditörlüğüTınçtık (Mir) Caddesi No 56Bişkek KIRGIZİSTANWeb: http://journals.manas.edu.kg/mjen/index.phpMail: zgonulalan@gmail.com, journals@manas.edu.kgTel : 00996 312 492763Fax: 00996 312 541935ISSN-1694-7398',
         'kg': 'Manas Mühendislik Bilimleri Dergisi / Manas Journal of Engineering (MJEN)Sahipleri / OwnersKırgızistan Türkiye Manas Üniversitesi AdınaProf. Dr. Sebahattin BALCIProf. Dr. Asılbek KULMIRZAYEVEditör / EditorProf. Dr. Zafer GÖNÜLALANEditör Yardımcıları / Associate EditorsYard. Doç. Dr. İlhan DOĞANYayın Kurulu / Advisory BoardProf. Dr. Ali Osman SOLAKProf. Dr. Ayhan TUTARProf. Dr. Coşkan ILICALIProf. Dr. Ulan BİRİMKULOVProf. Dr. Avıt ASANOVDoç. Dr. Tamara KARAŞOVAProf. Dr. Zarlık MAYMEKOVAlan Editörleri / Field Editors Prof. Dr. Ali Osman SOLAK (Chemistry and Chemical Engineering) Prof. Dr. Asan ÖMÜRALİYEV (Mathematics, Applied Mathematics and Informatics) Yard. Doç. Dr. İlhan DOĞAN (Biotechnology, Molecular Biology and Genetics) Doç. Dr. Raimbek SULTANOV (Computer Engineering, Information Technology)Yard. Doç. Dr. Emil OMURZAKOĞLU (Nanoscience, Nanothecnology, Nanomaterials)Yayın Sorumlusu / Editorial AssistantsRuslan ADİL AKAY TEGİNCumagül NURAKUNRedaksiyon / RedactionKırgızca : Doç. Dr.Taalaybek ABDİYEVTürkçe : : Öğr.Gör. İsmail ŞEN, Burhanettin ÇAKICIİngilizce : Öğr. Gör. Aida KASİYEVARusça : Anara BAYIZBEKOVAYayın PeriyoduYılda en az iki kez yayımlanan Manas Mühendislik Dergisi hakemli bir dergi olup yayımlanan makaleler en az iki hakem tarafından değerlendirilmektedir.Publication FrequencyManas Journal of Engineering (MJEN) is published at least twice a year, MJEN is a peer reviewed journal.Articles are evaluated by at least two reviewers.This journal was published by Kyrgyz-Turk Manas University, under the name of Fen Bilimleri Dergisi (Journal of Natural Sciences), starting in 2001. In 2013, publication was resumed under the current title, i.e. Manas Journal of Engineering (Manas Mühendislik Dergisi).Bilim Danışma Kurulu / Editorial Advisory BoardProf. Dr. Sebahattin BALCI - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr. Asılbek KULMIRZAYEV - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr.Ali BAHADIR - Kyrgyzstan-Turkey Manas University / KyrgyzistanProf. Dr. Gülbübü KURMANBEKOVA - Kyrgyzstan-Turkey Manas University / KyrgyzistanYazışma Adresi / CorrespondenceKırgızistan Türkiye Manas Üniversitesi Mühendislik Dergisi EditörlüğüTınçtık (Mir) Caddesi No 56Bişkek KIRGIZİSTANWeb: http://journals.manas.edu.kg/mjen/index.phpMail: zgonulalan@gmail.com, journals@manas.edu.kgTel : 00996 312 492763Fax: 00996 312 541935ISSN-1694-7398'
+      }
+    }, {
+      'title': {
+        'gb': "Manas Journal of Social Studies",
+        'ru': "Журнал Социальных Наук университета Манас",
+        'tr': "Manas Journal of Social Studies",
+        'kg': "Манас Университетинин Социалдык Илимдер Журналы"
       },
-      'color': '#062568'
-    }, {
-      'title': 'Manas Journal of Social Studies',
       'abbreviation': 'MJSS',
-      'color': '#05bcfe'
+      'color': '#05bcfe',
+      'about': {'gb': '', 'ru': '', 'tr': '', 'kg': '' },
+      'aim-scope': {'gb': '', 'ru': '', 'tr': '', 'kg': '' },
+      'terms-conditions': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'abstract-index': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'editorial-board': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'rules': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'instructions': {'gb': '', 'ru': '', 'tr': '','kg': ''}
     }, {
-      'title': 'Manas Journal of Agriculture and Life Sciences',
+      'title': {
+        'gb': "Manas Journal of Life Sciences and Agriculture",
+        'ru': "Журнал Науки о Жизни и Агрокультуры университета Манас",
+        'tr': "Manas Journal of Life Sciences and Agriculture",
+        'kg': "Журнал Науки о Жизни и Агрокультуры университета Манас"
+      },
       'abbreviation': 'MJAL',
-      'color': '#207a00'
+      'color': '#207a00',
+      'about': {'gb': '', 'ru': '', 'tr': '', 'kg': '' },
+      'aim-scope': {'gb': '', 'ru': '', 'tr': '', 'kg': '' },
+      'terms-conditions': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'abstract-index': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'editorial-board': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'rules': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'instructions': {'gb': '', 'ru': '', 'tr': '','kg': ''}
     }, {
-      'title': 'MANAS Journal of Economics and Administrative Science',
+      'title': {
+        'gb': "REFORMA Journal",
+        'ru': "Журнал \"Реформа\"",
+        'tr': "REFORMA dergisi",
+        'kg': "\"Реформа\" журналы"
+      },
       'abbreviation': 'REFORMA',
-      'color': '#08232c'
+      'color': '#08232c',
+      'about': {'gb': '', 'ru': '', 'tr': '', 'kg': '' },
+      'aim-scope': {'gb': '', 'ru': '', 'tr': '', 'kg': '' },
+      'terms-conditions': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'abstract-index': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'editorial-board': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'rules': {'gb': '', 'ru': '', 'tr': '', 'kg': ''},
+      'instructions': {'gb': '', 'ru': '', 'tr': '','kg': ''}
     })
       .then(() => {
         console.log('finished populating journals');
@@ -95,29 +136,95 @@ Journal.find({}).remove()
 
 Archive.find({}).remove()
   .then(() => {
-    Archive.create({
-      'journal': 'mjen',
-      'title': 'Кыргызстандын билим берүү мекемелери үчүн бирдиктүү портал шаблонун иштеп чыгуу',
-      'authors': "Чынара Байжанова, Улан Бримкулов",
-      'year': new Date(),
-      'abstract': "Маалымат Байланыш Технологияларын (МБТ) жана ачык тармактык ресурстарды колдонуу менен билим берүүнүн өнүгүү темпи жана келечеги өзгөрүүдө. Мектептин веб системи билим берүү мекемесинин башкаруу, ички жана сырткы персонал жана окуучулар арасындагы байланышуу жолдорун жеңилдетет. Ошондуктан Кыргызстандын билим берүү мекемелери үчүн типтүү сайттын шаблонун иштеп чыгуу маселеси эң маанилүү. Макалада маалымат системи, билим берүүнүн маалыматташуусу жана XXI кылымдын окуучусунун талаптары жөнүндө аныктамалар келтирилген. Изилдөө методунун негизинде Кыргызстандагы жана чет өлкөдөгү 100дөн ашуун билим берүү мекемелеринин веб сайттары техникалык жана маалыматтык камсыздоочу аспектинен анализденген. Жыйынтык катары мектеп сайтынын бирдиктүү түзүмү жана шаблону сунушталат.",
-      'keywords': ["Мектеп маалымат системи (ММС)", "билим берүүнүн маалыматташуусу", "мектеп веб сайт түзүмү", "веб портал", "бирдиктүү шаблон"],
-      'references': [
-        "Бримкулов У.Н. Маалымат теориясына киришүү. Б.: Айат, (2011) 160.",
-        "Дөөлөталиева А.С., Калыбеков А. Окутуу процессин маалыматташ–тыруу мезгилдин талабы Ж. Баласагын ат. КУУ Жарчысы, Серия – 6 (Спец. выпуск), Бишкек. (6-ноябрь, 2009) 120-122.",
-        "Georgette Grier-Key, M.A., Mary T. Kelly, Ed.D, Elsa-Sofia Morote, Ed.D, K-12 School",
-        "Principals and Assistant Principals Information Management, Knowledge of Technology and Level of Education, E-learn 2011, Honolulu, Hawaii, (October 18-21, 2011) 2-3.",
-        "Robertson, J. 10 prensiples of effective information management. Step two designs, (2005) 2-7.",
-        "Pegler, G. Perspectives for school information systems. Australian Journal of Educational Technology, (1992) 8(2), 161-171.",
-        "Demir, K. School management information systems in primary schools. The Turkish Online Journal of Educational Technology, (2006) 5(2), Article 6.",
-        "Кыргыз Республикасынын Президентинин буйругу, (25 – июнь, 1997).",
-        "Королева Е., Атанасов Г. Рейтинг школьных сайтов, Январь 2013. Интернет дареги: http://rating.rosnou.ru/. Кайрылуу датасы: 20 Март 2013.",
-        "Бримкулов, У.Н., Жумабаева Ч.Н. Веб сайт как основа Информационной Системы  Управления Школой (на примере Кыргызстана). Современные проблемы науки образования. №6, (2012)",
-        "Захарова И.Г. Информационные технологии в образовании, Москва: Академия, (2003). 180-181"
-      ],
-      'file': "mjen/archives/Y2013_V2_I14/b006849fe844aec036ca2e682240199b.pdf"
-    })
-      .then(() => {
-        console.log('finished populating archives');
-      })
+    Archive.create(require('../../data/archives.json'));
   });
+
+// Archive.find({}).remove()
+//   .then(() => {
+//     Archive.create({
+//       'journal': 'mjen',
+//       'title': 'Кыргызстандын билим берүү мекемелери үчүн бирдиктүү портал шаблонун иштеп чыгуу',
+//       'authors': "Чынара Байжанова, Улан Бримкулов",
+//       'year': new Date(),
+//       'abstract': "Маалымат Байланыш Технологияларын (МБТ) жана ачык тармактык ресурстарды колдонуу менен билим берүүнүн өнүгүү темпи жана келечеги өзгөрүүдө. Мектептин веб системи билим берүү мекемесинин башкаруу, ички жана сырткы персонал жана окуучулар арасындагы байланышуу жолдорун жеңилдетет. Ошондуктан Кыргызстандын билим берүү мекемелери үчүн типтүү сайттын шаблонун иштеп чыгуу маселеси эң маанилүү. Макалада маалымат системи, билим берүүнүн маалыматташуусу жана XXI кылымдын окуучусунун талаптары жөнүндө аныктамалар келтирилген. Изилдөө методунун негизинде Кыргызстандагы жана чет өлкөдөгү 100дөн ашуун билим берүү мекемелеринин веб сайттары техникалык жана маалыматтык камсыздоочу аспектинен анализденген. Жыйынтык катары мектеп сайтынын бирдиктүү түзүмү жана шаблону сунушталат.",
+//       'keywords': ["Мектеп маалымат системи (ММС)", "билим берүүнүн маалыматташуусу", "мектеп веб сайт түзүмү", "веб портал", "бирдиктүү шаблон"],
+//       'references': [
+//         "Бримкулов У.Н. Маалымат теориясына киришүү. Б.: Айат, (2011) 160.",
+//         "Дөөлөталиева А.С., Калыбеков А. Окутуу процессин маалыматташ–тыруу мезгилдин талабы Ж. Баласагын ат. КУУ Жарчысы, Серия – 6 (Спец. выпуск), Бишкек. (6-ноябрь, 2009) 120-122.",
+//         "Georgette Grier-Key, M.A., Mary T. Kelly, Ed.D, Elsa-Sofia Morote, Ed.D, K-12 School",
+//         "Principals and Assistant Principals Information Management, Knowledge of Technology and Level of Education, E-learn 2011, Honolulu, Hawaii, (October 18-21, 2011) 2-3.",
+//         "Robertson, J. 10 prensiples of effective information management. Step two designs, (2005) 2-7.",
+//         "Pegler, G. Perspectives for school information systems. Australian Journal of Educational Technology, (1992) 8(2), 161-171.",
+//         "Demir, K. School management information systems in primary schools. The Turkish Online Journal of Educational Technology, (2006) 5(2), Article 6.",
+//         "Кыргыз Республикасынын Президентинин буйругу, (25 – июнь, 1997).",
+//         "Королева Е., Атанасов Г. Рейтинг школьных сайтов, Январь 2013. Интернет дареги: http://rating.rosnou.ru/. Кайрылуу датасы: 20 Март 2013.",
+//         "Бримкулов, У.Н., Жумабаева Ч.Н. Веб сайт как основа Информационной Системы  Управления Школой (на примере Кыргызстана). Современные проблемы науки образования. №6, (2012)",
+//         "Захарова И.Г. Информационные технологии в образовании, Москва: Академия, (2003). 180-181"
+//       ],
+//       'file': "mjen/archives/Y2013_V2_I14/b006849fe844aec036ca2e682240199b.pdf"
+//     })
+//       .then(() => {
+//         console.log('finished populating archives');
+//       })
+//   });
+
+// var mysql = require('mysql');
+// var connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '1',
+//   database: 'fendergi'
+// });
+//
+// connection.connect();
+//
+// var result = [];
+//
+// var accumulateData = function (archives, index) {
+//   if (index < archives.length) {
+//     connection.query("SELECT * FROM articles where code = '" + archives[index].article + "'", function (err, rows, fields) {
+//       if (err) throw err;
+//
+//
+//       // for (var archive in rows) {
+//       //   console.log(rows[archive]);
+//       result.push({
+//           "journal": "mjen",
+//           "title": rows[0].name,
+//           "authors": "",
+//           "date": archives[index].date,
+//           "abstract": rows[0].abstract,
+//           "keywords": [rows[0].keyword],
+//           "references": [archives[index].reference],
+//           "file": "mjen/" + archives[index].url
+//         });
+//       accumulateData(archives, index + 1);
+//       // }
+//     });
+//   } else {
+//     Archive.find({}).remove()
+//       .then(() => {
+//         console.log(JSON.stringify(result));
+//         Archive.create(result);
+//       });
+//   }
+// };
+//
+// connection.query('SELECT * FROM archive_articles', function (err, rows, fields) {
+//   if (err) throw err;
+//   accumulateData(rows, 0);
+//
+//   // for (var archive in rows) {
+//   //   console.log(rows[archive]);
+//   //   archives.push({
+//   //     'journal': 'mjen',
+//   //     'title': rows[archive].name,
+//   //     'authors': "",
+//   //     'year': rows[archive].datetime,
+//   //     'abstract': rows[archive].abstract,
+//   //     'keywords': [rows[archive].keyword],
+//   //     'references': rows[archive].reference,
+//   //     'file': rows[archive].file
+//   //   });
+//   // }
+// });
