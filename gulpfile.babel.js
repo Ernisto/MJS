@@ -27,10 +27,12 @@ const serverPath = 'server';
 const paths = {
     client: {
         assets: `${clientPath}/assets/**/*`,
+        libs: `${clientPath}/libs/**/*`,
         images: `${clientPath}/assets/images/**/*`,
         revManifest: `${clientPath}/assets/rev-manifest.json`,
         scripts: [
-            `${clientPath}/**/!(*.spec|*.mock).js`
+            `${clientPath}/**/!(*.spec|*.mock).js`,
+            `!${clientPath}/libs/**/*`
         ],
         styles: [`${clientPath}/{app,components}/**/*.scss`],
         mainStyle: `${clientPath}/app/app.scss`,
@@ -474,6 +476,7 @@ gulp.task('build', cb => {
             'copy:extras',
             'copy:assets',
             'copy:fonts:dist',
+            'copy:libs',
             'copy:server',
             'webpack:dist'
         ],
@@ -547,6 +550,11 @@ gulp.task('copy:fonts:dist', () => {
 gulp.task('copy:assets', () => {
     return gulp.src([paths.client.assets, '!' + paths.client.images])
         .pipe(gulp.dest(`${paths.dist}/${clientPath}/assets`));
+});
+
+gulp.task('copy:libs', () => {
+    return gulp.src([paths.client.libs])
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}/libs`));
 });
 
 gulp.task('copy:server', () => {
