@@ -42,7 +42,7 @@
                  ng-repeat="(short, full) in $ctrl.languages"></div>
           </div>
           <ul id="languages-list" class="dropdown-menu hidden-xs">
-            <li ng-repeat="(short, full) in $ctrl.languages"
+            <li ng-repeat="(short, full) in $ctrl.languages track by $index"
                 class="languages-item"
                 ng-if="short != $ctrl.currentLanguage"
                 ng-click="$ctrl.setLanguage(short)">
