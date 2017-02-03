@@ -5,8 +5,8 @@ import mongoose from 'mongoose';
 var ArchiveSchema = new mongoose.Schema({
   journal: String,
   title: String,
-  authors: String,
-  year: Date,
+  authors: [String],
+  date: Date,
   abstract: String,
   keywords: [String],
   references: [String],
