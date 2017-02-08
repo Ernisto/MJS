@@ -5,6 +5,7 @@ export class NavbarComponent {
   constructor($scope, Auth, $translate, $http, localStorageService) {
     'ngInject';
 
+    this.isCollapsed = true;
     this.isLoggedIn = Auth.isLoggedInSync;
     this.isAdmin = Auth.isAdminSync;
     this.getCurrentUser = Auth.getCurrentUserSync;
