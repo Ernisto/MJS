@@ -1,9 +1,15 @@
 'use strict';
+const angular = require('angular');
 
-export default class AdminController {
+const uiRouter = require('angular-ui-router');
+
+import routes from './admin.routes';
+
+export class AdminComponent {
   /*@ngInject*/
   constructor(User, SweetAlert, $filter) {
     // Use the User $resource to fetch all users
+
     this.users = User.query();
     this.SweetAlert = SweetAlert;
     this.$filter = $filter;
@@ -21,10 +27,21 @@ export default class AdminController {
       closeOnConfirm: false
     }, (isConfirmed) => {
       if(isConfirmed) {
+
         user.$remove();
         this.users.splice(this.users.indexOf(user), 1);
-        swal(this.$filter('translate')('DELETED'), this.$filter('translate')('ACCOUNT_DELETED'), "success");
+        this.SweetAlert.swal(this.$filter('translate')('DELETED'), this.$filter('translate')('ACCOUNT_DELETED'), "success");
       }
     });
   }
+
 }
+
+export default angular.module('mjsApp.admin', [uiRouter])
+  .config(routes)
+  .component('admin', {
+    template: require('./admin.html'),
+    controller: AdminComponent,
+    controllerAs: 'adminCtrl'
+  })
+  .name;
