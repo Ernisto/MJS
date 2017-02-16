@@ -29,16 +29,36 @@
 }
 
 .archive-item {
-  border-radius: 5px;
-  padding: 5px 10px;
+  padding: 15px 10px;
   font-family: 'Roboto Slab';
   font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+
+  .author-title {
+    line-height: 20px;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .authors {
+    font-style: italic;
+    line-height: 20px;
+  }
+}
+
+.archive-item:hover {
+  background-color: rgba(183, 198, 255, 0.29);
+  box-shadow: inset 0 0 0 5px #53a7ea;
 }
 
 .archive-title {
   font-size: 25px;
   border-bottom: 2px #428bca solid;
   padding-bottom: 15px;
+  text-decoration: none;
 }
 
 .archive-authors {
@@ -67,6 +87,7 @@
 .archive-references {
   font-size: 15px;
   padding: 15px 0 0;
+  word-wrap: break-word;
 
   .reference-item {
     padding: 3px 0 3px;
@@ -102,8 +123,18 @@
   }
 }
 
-.archive-item:hover {
-  background-color: #c0ddb4;
+.journal-header {
+  position: relative;
+  padding: 20px 0px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+}
+
+.journal-header .journal-title {
+  font-size: 30px;
+  display: block;
 }
 
 .journal-category {
@@ -152,6 +183,8 @@
 .journal-content {
 }
 
-.editor-button {
-  margin-top: 10px;
+.content-border-bottom {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-top: 2px #428bca solid;
 }

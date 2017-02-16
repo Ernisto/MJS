@@ -1,0 +1,19 @@
+<div ng-if="journalCtrl.property">
+  <div ng-bind-html="journalCtrl.getTrustedHTML(journalCtrl.property.content[journalCtrl.$translate.use()])"
+       ng-show="!journalCtrl.editorContent"></div>
+
+  <wysiwyg-editor
+    content="journalCtrl.editorContent"
+    on-save="journalCtrl.updateProperty(content)"
+    on-cancel="journalCtrl.hideEditor()"
+    ng-if="journalCtrl.editorContent!=undefined && journalCtrl.isAdmin()">
+  </wysiwyg-editor>
+
+  <div class="content-border-bottom" ng-if="journalCtrl.isAdmin() && journalCtrl.editorContent == undefined"></div>
+
+  <div ng-click="journalCtrl.editCurrentProperty()"
+       class="btn btn-success btn-md pull-right "
+       ng-if="journalCtrl.isAdmin() && journalCtrl.editorContent == undefined">
+    Edit
+  </div>
+</div>

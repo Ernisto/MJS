@@ -7,85 +7,89 @@ import routes from './journal.routes';
 
 export class JournalComponent {
   /*@ngInject*/
-  constructor($stateParams, $http, $state, $translate, $rootScope, $sce, Auth) {
+  constructor($state, $scope, $translate, $rootScope, $sce, Auth, Modal, journalSvr) {
     'ngInject';
-    $http.get('/api/journals/abbreviation/' + $stateParams.journal)
-      .then(response => {
-        this.journal = response.data;
-        if($state.current.name == 'journal') {
-          $state.go('journal.about');
-        }
-      }, response => {
-        if(response.status == 404) {
-          $state.go('main');
-        }
-      });
 
-    $http.get('/api/archives/journals/' + $stateParams.journal)
-      .then(response => {
-        this.archives = response.data;
-      }, response => {
-        if(response.status == 404) {
-          $state.go('main');
-        }
-      });
-
-    $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams, options) => {
-      if(toState.name == 'journal') {
-        $state.go('journal.about');
-      }
-      this.editingProperty = null;
-      CKEDITOR.instances = {};
-    });
-
-    $rootScope.$on('$translateChangeSuccess', (event, data) => {
-      if(this.editingProperty) {
-        CKEDITOR.instances['journal-editor'].setData(this.journal[this.editingProperty.property][this.$translate.use()]);
-      }
-    });
+    this.backgroundStyle = this.getBackgroundStyle(this.journal.color);
 
     this.$translate = $translate;
     this.$rootScope = $rootScope;
-    this.$http= $http;
     this.$state = $state;
     this.$sce = $sce;
     this.isAdmin = Auth.isAdminSync;
+    this.Modal = Modal;
+    this.$scope = $scope;
+    this.property = this.getProperty(this.$state.current.stateName);
+    this.journalSvr = journalSvr;
+
+    $rootScope.$on('$translateChangeSuccess', (event, data) => {
+      this.editorContent = undefined;
+    });
   }
 
-  showPage(title){
-    this.currentPage = title;
+  setPropertyByTitle(propertyTitle) {
+    this.property = this.getProperty(propertyTitle);
+    this.editorContent = null;
   }
 
-  setCurrentArchive(archive) {
-    this.$rootScope.archive = archive;
+  editCurrentProperty() {
+    this.editorContent = this.property.content[this.$translate.use()];
   }
 
-  renderHTML(html) {
-    return this.$sce.trustAsHtml(html);
-  }
+  getProperty(propertyTitle) {
+    let props = this.journal['journal-properties'];
 
-  editProperty(property) {
-    this.editingProperty = {
-      property: property,
-      content: this.journal[property][this.$translate.use()]
-    };
-    if(!CKEDITOR.instances['journal-editor']) {
-      CKEDITOR.replace( 'journal-editor', {
-        language: 'ru'
-      });
+    for (let prop in props) {
+      if (props[prop].title == propertyTitle) {
+        return props[prop];
+      }
     }
   }
 
-  updateProperty(property) {
-    this.journal[property][this.$translate.use()] = CKEDITOR.instances['journal-editor'].getData();
-    this.$http.put('/api/journals/' + this.journal._id, this.journal)
+  getTrustedHTML(html) {
+    return this.$sce.trustAsHtml(html);
+  }
+
+  hideEditor() {
+    this.editorContent = undefined;
+  }
+
+  updateProperty(content) {
+    var update = {
+      patches: [{
+        op: "replace",
+        path: `/content/${this.$translate.use()}`,
+        value: content
+      }]
+    };
+    this.journalSvr.updateJournalProperty(this.property._id, update)
       .then(response => {
-        this.editingProperty = null;
+        let property = response.data;
+        this.journal['journal-properties'].forEach((prop) => {
+          if(prop._id == property._id) {
+            prop.content = property.content;
+          }
+        });
+        this.editorContent = null;
       }, response => {
-        if(response.status == 404) {
-          this.editingProperty = null;
-        }
+
       });
+  }
+
+  getBackgroundStyle(color) {
+    const rightColor = shadeColor(color, 0.1);
+    const leftColor = shadeColor(color, 0.3);
+
+    function shadeColor(color, percent) {
+      var f = parseInt(color.slice(1), 16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent * -1 : percent, R = f >> 16, G = f >> 8 & 0x00FF, B = f & 0x0000FF;
+      return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+    }
+
+    return `
+      background: ${color};
+      background: -webkit-linear-gradient(to left, ${rightColor} , ${leftColor});
+      background: linear-gradient(to left, ${rightColor} , ${leftColor});
+    `;
   }
 }
 
@@ -94,6 +98,7 @@ export default angular.module('mjsApp.journal', [uiRouter])
   .component('journal', {
     template: require('./journal.html'),
     controller: JournalComponent,
-    controllerAs: 'journalCtrl'
+    controllerAs: 'journalCtrl',
+    bindings: {journal: '<'}
   })
   .name;

@@ -1,5 +1,5 @@
-<header class="hero-unit">
-  <h2>{{journalCtrl.journal.abbreviation | translate}}</h2>
+<header class="journal-header" style="{{journalCtrl.backgroundStyle}}">
+  <div class="journal-title">{{journalCtrl.journal.title[journalCtrl.$translate.use()]}}</div>
 </header>
 <div class="container content-padding">
   <div class="col-md-3">
@@ -8,23 +8,23 @@
       <ul class="journal-property">
         <li ng-class="journalCtrl.$state.current.name == 'journal.about' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.about' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.about">About this journal</a>
+          <a ui-sref="journal.about" ng-click="journalCtrl.setPropertyByTitle('about')">About this journal</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.aim-scope' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.aim-scope' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.aim-scope">Aim and scope</a>
+          <a ui-sref="journal.aim-scope" ng-click="journalCtrl.setPropertyByTitle('aim-scope')">Aim and scope</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.terms-conditions' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.terms-conditions' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.terms-conditions">Terms and Conditions</a>
+          <a ui-sref="journal.terms-conditions" ng-click="journalCtrl.setPropertyByTitle('terms-conditions')">Terms and Conditions</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.abstract-index' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.abstract-index' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.abstract-index">Abstracting and Indexing</a>
+          <a ui-sref="journal.abstract-index" ng-click="journalCtrl.setPropertyByTitle('abstract-index')">Abstracting and Indexing</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.editorial-board' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.editorial-board' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.editorial-board">Editorial board</a>
+          <a ui-sref="journal.editorial-board" ng-click="journalCtrl.setPropertyByTitle('editorial-board')">Editorial board</a>
         </li>
       </ul>
     </div>
@@ -34,15 +34,15 @@
       <ul class="journal-property">
         <li ng-class="journalCtrl.$state.current.name == 'journal.last-volume-cover' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.last-volume-cover' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.last-volume-cover">Last volume cover</a>
+          <a ui-sref="journal.last-volume-cover" ng-click="journalCtrl.setPropertyByTitle('last-volume-cover')">Last volume cover</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.archives' || journalCtrl.$state.current.name == 'journal.archive-details' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.archives' || journalCtrl.$state.current.name == 'journal.archive-details' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.archives">Archives</a>
+          <a ui-sref="journal.archives" ng-click="journalCtrl.setPropertyByTitle('archives')">Archives</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.old-archives' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.old-archives' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.old-archives">Old archives</a>
+          <a ui-sref="journal.old-archives" ng-click="journalCtrl.setPropertyByTitle('old-archives')">Old archives</a>
         </li>
       </ul>
     </div>
@@ -52,15 +52,15 @@
       <ul class="journal-property">
         <li ng-class="journalCtrl.$state.current.name == 'journal.rules' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.rules' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.rules">Rules</a>
+          <a ui-sref="journal.rules" ng-click="journalCtrl.setPropertyByTitle('rules')">Rules</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.submit' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.submit' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.submit">Submit</a>
+          <a ui-sref="dashboard" ng-click="journalCtrl.setPropertyByTitle('submit')">Submit</a>
         </li>
         <li ng-class="journalCtrl.$state.current.name == 'journal.instructions' ? 'journal-property-active' : ''">
           <i class="fa" ng-class="journalCtrl.$state.current.name == 'journal.instructions' ? 'fa-check-circle' : 'fa-chevron-circle-right'" aria-hidden="true"></i>
-          <a ui-sref="journal.instructions">Instructions for authors</a>
+          <a ui-sref="journal.instructions" ng-click="journalCtrl.setPropertyByTitle('instructions')">Instructions for authors</a>
         </li>
       </ul>
     </div>
