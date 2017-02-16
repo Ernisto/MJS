@@ -1,6 +1,6 @@
 $icon-font-path: '/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/vendor/assets/stylesheets/bootstrap';
-$fa-font-path: '/assets/fonts/font-awesome/';
+$fa-font-path: '/assets/fonts/font-awesome';
 @import '~font-awesome/scss/font-awesome';
 @import '~sweetalert/dist/sweetalert';
 
@@ -113,6 +113,7 @@ body.stop-scrolling {
 @import 'dashboard/dashboard';
 @import 'journal/journal';
 @import 'main/main';
+@import 'submission/submission';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
 @import '../components/wysiwyg-editor/wysiwyg-editor';
