@@ -12,6 +12,7 @@ export function routeConfig($urlRouterProvider, $locationProvider, $translatePro
   });
 
   $translateProvider.preferredLanguage('gb');
+  $translateProvider.useSanitizeValueStrategy('escape');
 
   $urlRouterProvider.otherwise('/');
 
