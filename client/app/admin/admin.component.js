@@ -5,14 +5,25 @@ const uiRouter = require('angular-ui-router');
 
 import routes from './admin.routes';
 
+import './config';
+
 export class AdminComponent {
   /*@ngInject*/
-  constructor(User, SweetAlert, $filter) {
+  constructor(User, SweetAlert, $filter, $state) {
     // Use the User $resource to fetch all users
 
     this.users = User.query();
     this.SweetAlert = SweetAlert;
     this.$filter = $filter;
+    this.$state = $state;
+  }
+
+  $onInit() {
+    this.isReady = true;
+  }
+
+  $onDestroy() {
+    this.isReady = false;
   }
 
   delete(user) {
@@ -26,7 +37,7 @@ export class AdminComponent {
       cancelButtonText: this.$filter('translate')('CANCEL'),
       closeOnConfirm: false
     }, (isConfirmed) => {
-      if(isConfirmed) {
+      if (isConfirmed) {
 
         user.$remove();
         this.users.splice(this.users.indexOf(user), 1);

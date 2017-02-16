@@ -1,11 +1,12 @@
-//@import '/libs/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css';
-//@import '/libs/gentelella/vendors/font-awesome/css/font-awesome.min.css';
-//@import '/libs/gentelella/vendors/iCheck/skins/flat/green.css';
-//@import '/libs/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css';
-//@import '/libs/gentelella/production/css/maps/jquery-jvectormap-2.0.3.css';
-//@import '/libs/gentelella/build/css/custom.min.css';
+@import '/libs/admin/dist/css/AdminLTE.min.css';
+@import '/libs/admin/dist/css/skins/_all-skins.min.css';
+@import '~ionicons/css/ionicons.css';
 
 .trash { color:rgb(209, 91, 71); }
+
+a:hover, a:focus {
+  text-decoration: none;
+}
 
 .user-list {
   li {
