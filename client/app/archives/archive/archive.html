@@ -1,0 +1,38 @@
+<div class="archive-detail">
+  <div class="archive-title">{{archiveCtrl.archive.title}}</div>
+
+  <div class="archive-authors col-md-12">
+    <div class="left col-md-1">Authors: </div>
+    <div class="right col-md-11">
+      <i ng-repeat="author in archiveCtrl.archive.authors">{{author}}<i ng-if="!$last">, </i></i> <i>({{archiveCtrl.archive.date | date:'yyyy'}})</i>
+    </div>
+  </div>
+
+  <div class="archive-abstract col-md-12">
+    <div class="left col-md-1">Abstract: </div>
+    <div class="right col-md-11">{{archiveCtrl.archive.abstract}}</div>
+  </div>
+
+  <div class="archive-keywords col-md-12">
+    <div class="left col-md-1">Keywords: </div>
+    <div class="right col-md-11">
+      <span class="archive-keyword" ng-repeat="keyword in archiveCtrl.archive.keywords">{{keyword}}<span ng-if="!$last">, </span></span>
+    </div>
+  </div>
+
+  <div class="archive-references col-md-12">
+    <div class="left col-md-12">References: </div>
+    <div class="reference-item col-md-12" ng-repeat="reference in archiveCtrl.archive.references">
+      <div class="reference-order">[{{$index + 1}}]</div>
+      <div class="reference-title">{{reference}}</div>
+    </div>
+  </div>
+
+  <div class="archive-file col-md-12">
+    <div class="left col-md-12">File: </div>
+    <img src="/assets/images/pdf.png" ng-if="archiveCtrl.fileExtension == 'pdf'">
+    <img src="/assets/images/word.png" ng-if="archiveCtrl.fileExtension == 'word'">
+    <a ng-href="{{archiveCtrl.archive.file}}" target="_blank">Open File</a> |
+    <a ng-href="{{archiveCtrl.archive.file}}" target="_blank" download>Download File</a>
+  </div>
+</div>

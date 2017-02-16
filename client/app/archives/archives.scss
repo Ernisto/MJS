@@ -1,0 +1,28 @@
+.a-search-form {
+  .a-search-form__year {
+    font-weight: bold;
+    color: rgb(15, 151, 0)!important;
+  }
+  .a-search-form__input {
+    height: 30px;
+  }
+  .a-search-form__label {
+    font-family: "Roboto Slab";
+    font-size: 12pt;
+    font-weight: 500;
+  }
+  .navbar-nav > li > a, .navbar-brand {
+    padding-top:10px!important;
+    padding-bottom:10px!important;
+    height: 40px;
+  }
+  .navbar {
+    min-height:40px!important;
+    border-radius: 2px;
+    border-right: 0;
+    border-left: 0
+  }
+  .navbar-form {margin: 4px 0; padding-right: 0}
+  .glyphicon {top: 2px}
+  .btn {padding: 4px 12px;}
+}
