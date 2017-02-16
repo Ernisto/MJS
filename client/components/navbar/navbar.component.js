@@ -18,7 +18,7 @@ export class NavbarComponent {
       });
     this.localStorageService = localStorageService;
     this.currentLanguage = this.localStorageService.get('selected-lang') ?
-      this.localStorageService.get('selected-lang') : $translate.proposedLanguage();
+      this.localStorageService.get('selected-lang') : $translate.use();
     this.setLanguage(this.currentLanguage);
   }
 

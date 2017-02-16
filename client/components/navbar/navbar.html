@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-static-top mjs-navbar">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
@@ -31,7 +31,7 @@
           </a>
         </li>
         <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">{{ $ctrl.getCurrentUser().name }}</p> </li>
-        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="fa fa-cog"></span></a></li>
         <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">{{'LOGOUT' | translate}}</a></li>
         <li class="language-block">
           <div class="language-container">
