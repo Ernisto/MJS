@@ -1,18 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html ng-controller="RootController as rootCtrl">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <base href="/">
     <title ng-bind="'SITE_TITLE' | translate">Scientific Publications Office</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <script type="text/javascript" src="libs/ckeditor/ckeditor.js"></script>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 </head>
-<body>
+<body class="{{rootCtrl.bodyClass}}">
     <!--[if lt IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -28,8 +29,8 @@
       ga('send', 'pageview');
     </script>
 
-    <navbar></navbar>
+    <navbar ng-if="rootCtrl.layout === 'default'"></navbar>
     <div ui-view="" class="main-content"></div>
-    <footer class="footer"></footer>
+    <footer class="footer" ng-if="rootCtrl.layout === 'default'"></footer>
 </body>
 </html>
