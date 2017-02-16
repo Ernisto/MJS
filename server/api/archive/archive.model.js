@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 
 var ArchiveSchema = new mongoose.Schema({
-  journal: String,
+  journal: { type : mongoose.Schema.Types.ObjectId, ref : 'Journal' },
   title: String,
   authors: [String],
   date: Date,

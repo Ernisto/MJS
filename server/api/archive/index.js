@@ -6,7 +6,7 @@ var controller = require('./archive.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
-router.get('/journals/:journal', controller.getArchivesByJournal);
+router.get('/journals/:journal', controller.getArchivesByJournalId);
 router.get('/:id', controller.show);
 router.post('/journals/:journal', controller.create);
 router.put('/:id', controller.upsert);

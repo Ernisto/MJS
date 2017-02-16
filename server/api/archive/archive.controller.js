@@ -71,8 +71,8 @@ export function index(req, res) {
 }
 
 // Get archives by journal
-export function getArchivesByJournal(req, res) {
-  return Archive.find({'journal': req.params.journal.toLowerCase()}).exec()
+export function getArchivesByJournalId(req, res) {
+  return Archive.find({'journal': req.params.journal}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
