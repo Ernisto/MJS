@@ -17,6 +17,8 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/journal-property/journal-property.socket').register(socket);
+  require('../api/log/log.socket').register(socket);
   require('../api/archive/archive.socket').register(socket);
   require('../api/journal/journal.socket').register(socket);
 
