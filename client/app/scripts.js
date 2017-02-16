@@ -1,7 +1,5 @@
 'use strict';
 
-import $ from 'jquery';
-
 $('body').on('click', '.language-container', () => {
   $('#languages-list').toggle();
 });
