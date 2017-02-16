@@ -5,10 +5,12 @@ import routing from './main.routes';
 export class MainController {
 
   /*@ngInject*/
-  constructor($http, $scope, $translate, socket) {
+  constructor($http, $scope, $translate, socket, journalSvr) {
     this.$http = $http;
     this.$translate = $translate;
     this.socket = socket;
+    this.layout = 'main';
+    this.journalSvr = journalSvr;
 
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('journal');
@@ -16,11 +18,13 @@ export class MainController {
   }
 
   $onInit() {
-    this.$http.get('/api/journals')
-      .then(response => {
-        this.journals = response.data;
-        this.socket.syncUpdates('journal', this.journals);
-      });
+    this.journalSvr.getJournals(true) == null ?
+      this.journalSvr.getJournals(false)
+        .then(response => {
+          this.journalSvr.setJournals(response.data);
+          this.journals = response.data;
+        }) :
+      this.journals = this.journalSvr.getJournals(true);
   }
 }
 
