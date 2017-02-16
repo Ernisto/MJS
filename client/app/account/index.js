@@ -14,9 +14,10 @@ export default angular.module('mjsApp.account', [uiRouter, login, settings, sign
   .run(function($rootScope) {
     'ngInject';
 
-    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
-      if (next.name === 'logout' && current && current.name && !current.authenticate) {
+    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current, currentParams) {
+      if ((next.name === 'logout' || next.name === 'login')  && current && current.name && !current.authenticate) {
         next.referrer = current.name;
+        next.params = currentParams;
       }
     });
   })

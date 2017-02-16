@@ -17,8 +17,10 @@ export default class LoginController {
           password: this.user.password
         })
         .then(() => {
-          // Logged in, redirect to home
-          this.$state.go('main');
+          // Logged in, redirect to previous state
+          var referrer = this.$state.params.referrer || this.$state.current.referrer || 'main';
+          var params = this.$state.current.params || {};
+          this.$state.go(referrer, params);
         })
         .catch(err => {
           this.errors.login = err.message;
