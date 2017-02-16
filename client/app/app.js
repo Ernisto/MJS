@@ -42,6 +42,7 @@ import archives from './archives/archives.component';
 import archive from './archives/archive/archive.component';
 import archiveService from './archives/service/archive.service';
 import dashboard from './dashboard/dashboard.component';
+import submission from './submission/submission.component';
 import './scripts';
 
 import './app.scss';
@@ -53,8 +54,10 @@ angular.module('mjsApp', [
   // ngMessages,
 
   // ngValidationMatch,
-  _Auth, Modal, wysiwygEditor, account, admin, adminNavbar, adminFooter, adminMainSidebar,
-  navbar, footer, main, constants, socket, util, dashboard, journal, journalService, archives, archive, archiveService
+  _Auth, Modal, wysiwygEditor, account, admin, adminNavbar,
+  adminFooter, adminMainSidebar,navbar, footer, main, constants,
+  socket, util, dashboard, submission, journal, journalService,
+  archives, archive, archiveService
 ])
   .config(routeConfig)
   .controller('RootController', function ($rootScope) {

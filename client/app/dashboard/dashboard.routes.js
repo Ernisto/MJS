@@ -1,10 +1,15 @@
 'use strict';
 
-export default function($stateProvider) {
+export default function ($stateProvider) {
   'ngInject';
   $stateProvider
     .state('dashboard', {
       url: '/dashboard',
-      template: '<dashboard></dashboard>'
-    });
+      template: '<dashboard></dashboard>',
+      authenticate: true,
+      data: {
+        layout: 'default',
+        bodyClass: ''
+      }
+    })
 }
