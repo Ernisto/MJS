@@ -5,7 +5,6 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-import Journal from './journal.model';
 var JournalEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
@@ -18,16 +17,19 @@ var events = {
 };
 
 // Register the event emitter to the model events
-for(var e in events) {
-  let event = events[e];
-  Journal.schema.post(e, emitEvent(event));
+function registerEvents(Journal) {
+  for (var e in events) {
+    let event = events[e];
+    Journal.post(e, emitEvent(event));
+  }
 }
 
 function emitEvent(event) {
-  return function(doc) {
+  return function (doc) {
     JournalEvents.emit(event + ':' + doc._id, doc);
     JournalEvents.emit(event, doc);
   };
 }
 
+export {registerEvents};
 export default JournalEvents;

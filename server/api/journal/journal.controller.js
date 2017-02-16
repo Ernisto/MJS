@@ -80,7 +80,7 @@ export function show(req, res) {
 
 // Gets a single Journal from the DB by abbreviation
 export function getJournalByAbbreviation(req, res) {
-  return Journal.findOne({abbreviation: req.params.abbreviation.toUpperCase()}).exec()
+  return Journal.findOne({abbreviation: req.params.abbreviation}).populate('journal-properties').exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
