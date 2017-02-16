@@ -7,9 +7,11 @@ function localAuthenticate(User, email, password, done) {
   }).exec()
     .then(user => {
       if(!user) {
-        return done(null, false, {
+        done(null, false, {
           message: 'This email is not registered.'
         });
+
+        return null;
       }
       user.authenticate(password, function(authError, authenticated) {
         if(authError) {
