@@ -28,6 +28,7 @@ const paths = {
     client: {
         assets: `${clientPath}/assets/**/*`,
         libs: `${clientPath}/libs/**/*`,
+        translation: `${clientPath}/translation/**/*`,
         images: `${clientPath}/assets/images/**/*`,
         revManifest: `${clientPath}/assets/rev-manifest.json`,
         scripts: [
@@ -477,6 +478,7 @@ gulp.task('build', cb => {
             'copy:assets',
             'copy:fonts:dist',
             'copy:libs',
+            'copy:translation',
             'copy:server',
             'webpack:dist'
         ],
@@ -488,12 +490,12 @@ gulp.task('clean:dist', () => del([`${paths.dist}/!(.git*|.openshift|Procfile)**
 
 gulp.task('build:images', () => {
     return gulp.src(paths.client.images)
-        .pipe(plugins.imagemin([
-            plugins.imagemin.optipng({optimizationLevel: 5}),
-            plugins.imagemin.jpegtran({progressive: true}),
-            plugins.imagemin.gifsicle({interlaced: true}),
-            plugins.imagemin.svgo({plugins: [{removeViewBox: false}]})
-        ]))
+        // .pipe(plugins.imagemin([
+        //     plugins.imagemin.optipng({optimizationLevel: 5}),
+        //     plugins.imagemin.jpegtran({progressive: true}),
+        //     plugins.imagemin.gifsicle({interlaced: true}),
+        //     plugins.imagemin.svgo({plugins: [{removeViewBox: false}]})
+        // ]))
         .pipe(plugins.rev())
         .pipe(gulp.dest(`${paths.dist}/${clientPath}/assets/images`))
         .pipe(plugins.rev.manifest(`${paths.dist}/${paths.client.revManifest}`, {
@@ -555,6 +557,11 @@ gulp.task('copy:assets', () => {
 gulp.task('copy:libs', () => {
     return gulp.src([paths.client.libs])
         .pipe(gulp.dest(`${paths.dist}/${clientPath}/libs`));
+});
+
+gulp.task('copy:translation', () => {
+    return gulp.src([paths.client.translation])
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}/translation`));
 });
 
 gulp.task('copy:server', () => {
