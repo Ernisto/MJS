@@ -2,7 +2,7 @@
 const angular = require('angular');
 
 export default angular.module('mjsApp.wysiwygEditor', [])
-  .directive('wysiwygEditor', function () {
+  .directive('wysiwygEditor', function ($q, $translate) {
     return {
       template: require('./wysiwyg-editor.html'),
       restrict: 'EA',
@@ -13,6 +13,7 @@ export default angular.module('mjsApp.wysiwygEditor', [])
       },
       link: function (scope, element, attrs) {
         scope.isReady = false;
+        scope.newValue = null;
 
         scope.hideEditor = function () {
           scope.onCancel();
@@ -24,26 +25,27 @@ export default angular.module('mjsApp.wysiwygEditor', [])
           scope.onSave({content: content});
         };
 
-        scope.$watchCollection('content', function (newValue, oldValue) {
-          CKEDITOR.instances['wysiwyg-editor'].setData(newValue);
-        }, true);
-
         CKEDITOR.replace('wysiwyg-editor', {
-          language: 'en'
+          language: $translate.use() != 'kg' ? $translate.use() : 'ru'
         });
 
         CKEDITOR.instances['wysiwyg-editor'].on('instanceReady', function () {
-          scope.isReady = true;
-          scope.initialContent = CKEDITOR.instances['wysiwyg-editor'].getData();
-          scope.contentChanged = false;
-          scope.$apply();
+          scope.embeddingContent = $q(function (resolve, reject) {
+            const initialContent = CKEDITOR.instances['wysiwyg-editor'].getData();
+            scope.isReady = true;
+            scope.contentChanged = false;
+            scope.$apply();
+            resolve(initialContent);
+          });
         });
 
         CKEDITOR.instances['wysiwyg-editor'].on('change', function () {
-          scope.contentChanged =
-            CKEDITOR.instances['wysiwyg-editor'].getData() === scope.initialContent ?
-              false : true;
-          scope.$apply();
+          scope.embeddingContent.then(function (initialContent) {
+            scope.contentChanged =
+              CKEDITOR.instances['wysiwyg-editor'].getData() === initialContent ? false : true;
+          }, function (reason) {
+            console.log('Failed: ' + reason);
+          });
         });
       }
     };
