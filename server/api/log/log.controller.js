@@ -65,7 +65,13 @@ function handleError(res, statusCode) {
 
 // Gets a list of Logs
 export function index(req, res) {
-  return Log.find().exec()
+  return Log.find()
+    .populate([
+      {path: 'property', select: 'title'},
+      {path: 'journal', select: 'abbreviation color'},
+      {path: 'user', select: 'name'}
+      ])
+    .exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
