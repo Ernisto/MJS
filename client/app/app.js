@@ -27,6 +27,7 @@ import Modal from '../components/modal/modal.service';
 import wysiwygEditor from '../components/wysiwyg-editor/wysiwyg-editor.directive';
 import account from './account';
 import admin from './admin/admin.component';
+import adminService from './admin/service/admin.service';
 import adminNavbar from './admin/admin-navbar/admin-navbar.component';
 import adminFooter from './admin/admin-footer/admin-footer.component';
 import adminMainSidebar from './admin/admin-main-sidebar/admin-main-sidebar.component';
@@ -54,7 +55,7 @@ angular.module('mjsApp', [
   // ngMessages,
 
   // ngValidationMatch,
-  _Auth, Modal, wysiwygEditor, account, admin, adminNavbar,
+  _Auth, Modal, wysiwygEditor, account, admin, adminService, adminNavbar,
   adminFooter, adminMainSidebar,navbar, footer, main, constants,
   socket, util, dashboard, submission, journal, journalService,
   archives, archive, archiveService
