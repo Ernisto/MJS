@@ -9,13 +9,24 @@ import './config';
 
 export class AdminComponent {
   /*@ngInject*/
-  constructor(User, SweetAlert, $filter, $state) {
+  constructor(User, SweetAlert, $filter, $state, adminSvr, $timeout) {
     // Use the User $resource to fetch all users
 
     this.users = User.query();
     this.SweetAlert = SweetAlert;
     this.$filter = $filter;
     this.$state = $state;
+    adminSvr.getJournalPropertyLogs()
+      .then(function (response) {
+      });
+
+    /** Apply layout fixes on load **/
+    angular.element(document).ready(function () {
+      $timeout(function () {
+        $.AdminLTE.layout.fix();
+        $.AdminLTE.layout.fixSidebar();
+      });
+    });
   }
 
   $onInit() {
