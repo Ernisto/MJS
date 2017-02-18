@@ -22,5 +22,12 @@
   "NEW_PASSWORD": "New Password",
   "CONFIRM_NEW_PASSWORD": "Confirm New Password",
   "REGISTER": "Register",
-  "NAME": "Name"
+  "NAME": "Name",
+  "about": "About",
+  "aim-scope": "Aim and scope",
+  "terms-conditions": "Terms and conditions",
+  "abstract-index": "Abstract Index",
+  "editorial-board": "Editorial Board",
+  "rules": "Rules",
+  "instructions": "Instructions"
 }

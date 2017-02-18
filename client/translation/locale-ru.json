@@ -22,5 +22,12 @@
   "NEW_PASSWORD": "Новый пароль",
   "CONFIRM_NEW_PASSWORD": "Подтвердите новый пароль",
   "REGISTER": "Зарегистрироваться",
-  "NAME": "Имя"
+  "NAME": "Имя",
+  "about": "О нас",
+  "aim-scope": "Цель и сфера применения",
+  "terms-conditions": "Условия и положения",
+  "abstract-index": "Абстракт Индекс",
+  "editorial-board": "Редакционный совет",
+  "rules": "Правила",
+  "instructions": "Инструкции"
 }

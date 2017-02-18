@@ -22,5 +22,12 @@
   "NEW_PASSWORD": "Новый пароль",
   "CONFIRM_NEW_PASSWORD": "Подтвердите новый пароль",
   "REGISTER": "Зарегистрироваться",
-  "NAME": "Имя"
+  "NAME": "Имя",
+  "about": "Биз жонундо",
+  "aim-scope": "Максаты жана колдонуу чөйрөсү",
+  "terms-conditions": "Терминдер жана шарттар",
+  "abstract-index": "Абстракт жана индекс",
+  "editorial-board": "Редакциялык кенещ",
+  "rules": "Эрежелер",
+  "instructions": "Инструкциялар"
 }
