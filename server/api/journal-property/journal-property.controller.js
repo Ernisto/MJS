@@ -12,6 +12,7 @@
 
 import jsonpatch from 'fast-json-patch';
 import JournalProperty from './journal-property.model';
+import Log from '../log/log.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -23,15 +24,30 @@ function respondWithResult(res, statusCode) {
   };
 }
 
-function patchUpdates(updates) {
-  return function(entity) {
+function patchUpdates(update, userId) {
+  var patches = [{
+    op: "replace",
+    path: `/content/${update.lang}`,
+    value: update.value
+  }];
+
+  return function (entity) {
     try {
-      jsonpatch.apply(entity, updates.patches, /*validate*/ true);
-    } catch(err) {
+      jsonpatch.apply(entity, patches, /*validate*/ true);
+    } catch (err) {
       return Promise.reject(err);
     }
     entity.markModified('content');
-    return entity.save();
+    return entity.save().then(function (doc) {
+      Log.create({
+        journal: doc.journal,
+        property: doc._id,
+        language: update.lang,
+        user: userId,
+        content: update.value
+      });
+      return doc;
+    });
   };
 }
 
@@ -65,7 +81,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of JournalPropertys
 export function index(req, res) {
-  return JournalProperty.find().exec()
+  return JournalProperty.find().populate('user').exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
@@ -90,7 +106,12 @@ export function upsert(req, res) {
   if(req.body._id) {
     delete req.body._id;
   }
-  return JournalProperty.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+  return JournalProperty.findOneAndUpdate({_id: req.params.id}, req.body, {
+    new: true,
+    upsert: true,
+    setDefaultsOnInsert: true,
+    runValidators: true
+  }).exec()
 
     .then(respondWithResult(res))
     .catch(handleError(res));
@@ -103,7 +124,7 @@ export function patch(req, res) {
   }
   return JournalProperty.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
-    .then(patchUpdates(req.body))
+    .then(patchUpdates(req.body, req.user._id))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

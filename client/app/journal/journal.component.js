@@ -56,17 +56,15 @@ export class JournalComponent {
 
   updateProperty(content) {
     var update = {
-      patches: [{
-        op: "replace",
-        path: `/content/${this.$translate.use()}`,
-        value: content
-      }]
+      lang: this.$translate.use(),
+      value: content
     };
+
     this.journalSvr.updateJournalProperty(this.property._id, update)
       .then(response => {
         let property = response.data;
         this.journal['journal-properties'].forEach((prop) => {
-          if(prop._id == property._id) {
+          if (prop._id == property._id) {
             prop.content = property.content;
           }
         });
