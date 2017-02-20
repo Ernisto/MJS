@@ -23,6 +23,14 @@
   "CONFIRM_NEW_PASSWORD": "Подтвердите новый пароль",
   "REGISTER": "Зарегистрироваться",
   "NAME": "Имя",
+
+  "CONTENT_NOT_CHANGED": "Актуалдуу версиядан айырмаланган контент танданыз",
+  "CHOOSE_ANOTHER_ROLLBACK_POINT": "Башка верисияны танданыз",
+  "ROLLED_BACK": "Озгоруулор орун алды",
+  "ROLLED_BACK_SUCCESS": "Баары ийгиликтуу отту",
+  "ROLLBACK_WARN": "Озгорууло орун алат",
+  "ROLLBACK_AGREE": "Ооба, маакулмун",
+
   "about": "Биз жонундо",
   "aim-scope": "Максаты жана колдонуу чөйрөсү",
   "terms-conditions": "Терминдер жана шарттар",

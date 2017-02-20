@@ -23,6 +23,14 @@
   "CONFIRM_NEW_PASSWORD": "Confirm New Password",
   "REGISTER": "Register",
   "NAME": "Name",
+  "CONTENT_NOT_CHANGED": "You can not rollback to actual version of page",
+
+  "CHOOSE_ANOTHER_ROLLBACK_POINT": "Bashka verileri sechin",
+  "ROLLED_BACK": "Rolled back",
+  "ROLLED_BACK_SUCCESS": "Hepsi basarili gecti",
+  "ROLLBACK_WARN": "Dergi sayfasi degisecek",
+  "ROLLBACK_AGREE": "Evet",
+
   "about": "About",
   "aim-scope": "Aim and scope",
   "terms-conditions": "Terms and conditions",

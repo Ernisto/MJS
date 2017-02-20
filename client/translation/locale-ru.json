@@ -23,6 +23,14 @@
   "CONFIRM_NEW_PASSWORD": "Подтвердите новый пароль",
   "REGISTER": "Зарегистрироваться",
   "NAME": "Имя",
+
+  "CONTENT_NOT_CHANGED": "Вы не можете откатиться к актуальной версии",
+  "CHOOSE_ANOTHER_ROLLBACK_POINT": "Выберите другую контрольную точку",
+  "ROLLED_BACK": "Изменения вступили в силу",
+  "ROLLED_BACK_SUCCESS": "Все прошло хорошо",
+  "ROLLBACK_WARN": "Страница журнала изменится",
+  "ROLLBACK_AGREE": "Да, применить",
+
   "about": "О нас",
   "aim-scope": "Цель и сфера применения",
   "terms-conditions": "Условия и положения",

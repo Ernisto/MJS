@@ -23,6 +23,14 @@
   "CONFIRM_NEW_PASSWORD": "Confirm New Password",
   "REGISTER": "Register",
   "NAME": "Name",
+
+  "CONTENT_NOT_CHANGED": "You can not rollback to actual version of page",
+  "CHOOSE_ANOTHER_ROLLBACK_POINT": "Choose another rollback point",
+  "ROLLED_BACK": "Rolled back",
+  "ROLLED_BACK_SUCCESS": "You have successfully rolled back",
+  "ROLLBACK_WARN": "You will rollback content to this point",
+  "ROLLBACK_AGREE": "Yes, rollback",
+
   "about": "About",
   "aim-scope": "Aim and scope",
   "terms-conditions": "Terms and conditions",
