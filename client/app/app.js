@@ -25,12 +25,14 @@ import {
 import _Auth from '../components/auth/auth.module';
 import Modal from '../components/modal/modal.service';
 import wysiwygEditor from '../components/wysiwyg-editor/wysiwyg-editor.directive';
+import datatable from '../components/datatable/datatable.directive';
 import account from './account';
 import admin from './admin/admin.component';
 import adminService from './admin/service/admin.service';
 import adminNavbar from './admin/admin-navbar/admin-navbar.component';
 import adminFooter from './admin/admin-footer/admin-footer.component';
 import adminMainSidebar from './admin/admin-main-sidebar/admin-main-sidebar.component';
+import logs from './admin/logs/logs.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
@@ -55,9 +57,9 @@ angular.module('mjsApp', [
   // ngMessages,
 
   // ngValidationMatch,
-  _Auth, Modal, wysiwygEditor, account, admin, adminService, adminNavbar,
-  adminFooter, adminMainSidebar,navbar, footer, main, constants,
-  socket, util, dashboard, submission, journal, journalService,
+  _Auth, Modal, wysiwygEditor, datatable, account, admin, adminService,
+  adminNavbar, adminFooter, adminMainSidebar, logs, navbar, footer, main,
+  constants, socket, util, dashboard, submission, journal, journalService,
   archives, archive, archiveService
 ])
   .config(routeConfig)
