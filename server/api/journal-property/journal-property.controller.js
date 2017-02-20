@@ -32,6 +32,9 @@ function patchUpdates(update, userId) {
   }];
 
   return function (entity) {
+    if (entity.content[update.lang] == update.value) {
+      return Promise.resolve({sameContent: true});
+    }
     try {
       jsonpatch.apply(entity, patches, /*validate*/ true);
     } catch (err) {
@@ -44,6 +47,7 @@ function patchUpdates(update, userId) {
         property: doc._id,
         language: update.lang,
         user: userId,
+        timestamp: Date.now(),
         content: update.value
       });
       return doc;
