@@ -8,7 +8,7 @@ var LogSchema = new mongoose.Schema({
   property: { type : mongoose.Schema.ObjectId, ref : 'JournalProperty' },
   language: String,
   user: { type : mongoose.Schema.ObjectId, ref : 'User' },
-  timestamp: {type: Date, default: Date.now()},
+  timestamp: Date,
   content: String
 });
 
