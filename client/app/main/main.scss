@@ -101,6 +101,8 @@
 }
 
 .flag {
+  display: inline-block;
+  vertical-align: middle;
   width: 32px;
   height: 32px;
   background: url('/assets/images/flags.png') no-repeat center;
