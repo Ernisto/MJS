@@ -9,16 +9,19 @@ import './config';
 
 export class AdminComponent {
   /*@ngInject*/
-  constructor(User, SweetAlert, $filter, $state, adminSvr, $timeout) {
+  constructor(User, SweetAlert, Modal, $filter, $state, adminSvr, journalSvr, $timeout, $sce, $uibModal, $rootScope) {
     // Use the User $resource to fetch all users
 
     this.users = User.query();
     this.SweetAlert = SweetAlert;
+    this.$uibModal = $uibModal;
+    this.Modal = Modal;
     this.$filter = $filter;
     this.$state = $state;
-    adminSvr.getJournalPropertyLogs()
-      .then(function (response) {
-      });
+    this.$sce = $sce;
+    this.$rootScope = $rootScope;
+    this.adminSvr = adminSvr;
+    this.journalSvr = journalSvr;
 
     /** Apply layout fixes on load **/
     angular.element(document).ready(function () {
@@ -30,11 +33,11 @@ export class AdminComponent {
   }
 
   $onInit() {
-    this.isReady = true;
+
   }
 
   $onDestroy() {
-    this.isReady = false;
+
   }
 
   delete(user) {
