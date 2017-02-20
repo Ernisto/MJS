@@ -1,0 +1,37 @@
+.journal-property__lang {
+  @media (max-width: 767px) {
+    .flag {
+      float: none;
+      margin-right: 0;
+    }
+  }
+}
+
+.journal-property__abbr {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.journal-property__date {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.journal-property__time {
+  font-size: 10pt;
+  color: #0f9700;
+  font-weight: bold;
+}
+
+.journal-property__title {
+  font-style: italic;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.journal-property__user {
+  font-size: 11pt;
+  font-weight: bold;
+  font-family: "Roboto Slab";
+  color: #295ca9;
+}

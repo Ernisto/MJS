@@ -1,0 +1,95 @@
+<section class="content-header">
+  <h1>
+    Data Tables
+    <small>advanced tables</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Tables</a></li>
+    <li class="active">Data tables</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Journal Property Change History Logs</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table
+            datatable
+            dt-ready="logsCtrl.dtReady"
+            dt-config="logsCtrl.config"
+            class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+              <th>User</th>
+              <th class="text-center">Date</th>
+              <th class="text-center">Journal</th>
+              <th>Property</th>
+              <th class="text-center">Language</th>
+              <th class="text-center">Language</th>
+              <th class="text-center">Preview</th>
+              <th class="text-center">Rollback</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="log in logsCtrl.logs | orderBy:$index:true"
+                ng-init="logsCtrl.dtReady = $last ? true : false">
+              <td>
+                <div class="journal-property__user">
+                  {{log.user.name}}
+                </div>
+              </td>
+              <td class="text-center">
+                <div ng-bind-html="logsCtrl.getNormalDate(log.timestamp)"></div>
+              </td>
+              <td ng-style="{'color': log.journal.color}" class="text-center">
+                <div class="journal-property__abbr">{{log.journal.abbreviation | uppercase}}</div>
+              </td>
+              <td>
+                <div class="journal-property__title" ng-bind="log.property.title | translate">{{log.property.title}}
+                </div>
+              </td>
+              <td class="text-center journal-property__lang">
+                <div class="flag flag-{{log.language}}"></div>
+              </td>
+              <td class="text-center journal-property__lang">
+                <div>{{log.language}}</div>
+              </td>
+              <td class="text-center">
+                <a class="btn btn-sm btn-primary" ng-click="logsCtrl.previewLogContent(log._id)">
+                  <i class="fa fa-eye"></i>
+                </a>
+              </td>
+              <td class="text-center">
+                <a class="btn btn-sm btn-warning" ng-click="logsCtrl.rollback(log._id)">
+                  <i class="fa fa-reply"></i>
+                </a>
+              </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>User</th>
+              <th class="text-center">Date</th>
+              <th class="text-center">Journal</th>
+              <th>Property</th>
+              <th class="text-center">Language</th>
+              <th class="text-center">Language</th>
+              <th class="text-center">Preview</th>
+              <th class="text-center">Rollback</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
