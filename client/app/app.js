@@ -74,8 +74,11 @@ angular.module('mjsApp', [
       vm.bodyClass = toState.data.bodyClass ? toState.data.bodyClass : '';
     });
   })
-  .run(function ($rootScope, $location, $state, Auth) {
+  .run(function ($rootScope, $location, $state, Auth, $templateCache) {
     'ngInject';
+
+    $templateCache.put('admin-main-sidebar.html', require('./admin/admin-main-sidebar/admin-main-sidebar.html'));
+
     // Redirect to login if route requires auth and you're not logged in
 
     $rootScope.$on('$stateChangeStart', function (event, next, params) {
