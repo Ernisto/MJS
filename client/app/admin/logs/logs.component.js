@@ -69,7 +69,7 @@ export class LogsComponent {
 
         this.$uibModal.open({
           animation: true,
-          templateUrl: 'app/admin/logs/preview.html',
+          template: require('./preview.html'),
           windowClass: 'modal-default',
           appendTo: angular.element(document.querySelector('.modal-parent')),
           size: 'lg',
