@@ -31,7 +31,6 @@ import admin from './admin/admin.component';
 import adminService from './admin/service/admin.service';
 import adminNavbar from './admin/admin-navbar/admin-navbar.component';
 import adminFooter from './admin/admin-footer/admin-footer.component';
-import adminMainSidebar from './admin/admin-main-sidebar/admin-main-sidebar.component';
 import logs from './admin/logs/logs.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
@@ -58,7 +57,7 @@ angular.module('mjsApp', [
 
   // ngValidationMatch,
   _Auth, Modal, wysiwygEditor, datatable, account, admin, adminService,
-  adminNavbar, adminFooter, adminMainSidebar, logs, navbar, footer, main,
+  adminNavbar, adminFooter, logs, navbar, footer, main,
   constants, socket, util, dashboard, submission, journal, journalService,
   archives, archive, archiveService
 ])
