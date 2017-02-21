@@ -110,13 +110,14 @@ body.stop-scrolling {
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
+@import 'admin/logs/logs';
 @import 'archives/archives';
 @import 'dashboard/dashboard';
 @import 'journal/journal';
 @import 'main/main';
 @import 'submission/submission';
+@import '../components/datatable/datatable';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
 @import '../components/wysiwyg-editor/wysiwyg-editor';
-@import '../components/datatable/datatable';
 /* endinject */
