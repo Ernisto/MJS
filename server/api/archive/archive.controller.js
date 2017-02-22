@@ -65,7 +65,11 @@ function handleError(res, statusCode) {
 
 // Gets a list of Archives
 export function index(req, res) {
-  return Archive.find().exec()
+  return Archive.find()
+    .populate({
+      path: 'journal', select: 'abbreviation'
+    })
+    .exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
