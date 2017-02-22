@@ -13,12 +13,17 @@ import 'bootstrap/js/dropdown';
  * @version 2.3.8
  * @license MIT <http://opensource.org/licenses/MIT>
  */
+function fixLayout() {
+  $.AdminLTE.layout.fix();
+  $.AdminLTE.layout.fixSidebar();
+}
+
 module.exports = {
   initialize: function () {
 
     // If Admin panel already initialized just fix layout
     if($.AdminLTE) {
-      this.fix();
+      fixLayout();
       return;
     }
 
@@ -278,7 +283,7 @@ module.exports = {
             $(".content-wrapper, .right-side").css('min-height', window_height - footer_height);
           } else {
             var postSetWidth;
-            if (window_height >= sidebar_height) {
+            if (window_height >= (sidebar_height + $('.main-header').outerHeight())) {
               $(".content-wrapper, .right-side").css('min-height', window_height - neg);
               postSetWidth = window_height - neg;
             } else {
@@ -782,8 +787,5 @@ module.exports = {
       };
     }(jQuery));
   },
-  fix: function () {
-    $.AdminLTE.layout.fix();
-    $.AdminLTE.layout.fixSidebar();
-  }
+  fix: fixLayout
 };
