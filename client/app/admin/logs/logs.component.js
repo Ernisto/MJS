@@ -1,10 +1,6 @@
 'use strict';
 const angular = require('angular');
 
-const uiRouter = require('angular-ui-router');
-
-import routes from './logs.routes';
-
 import moment from 'moment';
 
 export class LogsComponent {
@@ -108,9 +104,8 @@ export class LogsComponent {
   }
 }
 
-export default angular.module('mjsApp.logs', [uiRouter])
-  .config(routes)
-  .component('logs', {
+export default angular.module('mjsApp.admin.logs', [])
+  .component('adminLogs', {
     template: require('./logs.html'),
     controller: LogsComponent,
     controllerAs: 'logsCtrl'

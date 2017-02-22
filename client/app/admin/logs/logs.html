@@ -16,11 +16,16 @@
         <div class="box-header">
           <h3 class="box-title">Journal Property Change History Logs</h3>
         </div>
+        <progress-bar is-visible="!logsCtrl.dtRendered"></progress-bar>
         <!-- /.box-header -->
         <div class="box-body">
           <table
             datatable
+            ng-init="logsCtrl.dtRendered = false"
+            ng-show="logsCtrl.dtRendered"
             dt-ready="logsCtrl.dtReady"
+            dt-rendered="logsCtrl.dtRendered"
+            ng-show="logsCtrl.dtRendered"
             dt-config="logsCtrl.config"
             class="table table-bordered table-striped table-hover">
             <thead>
