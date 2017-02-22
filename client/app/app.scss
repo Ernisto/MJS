@@ -110,7 +110,11 @@ body.stop-scrolling {
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
+@import 'admin/archives/archives';
+@import 'admin/journals/journals';
 @import 'admin/logs/logs';
+@import 'admin/monitoring/monitoring';
+@import 'admin/users/users';
 @import 'archives/archives';
 @import 'dashboard/dashboard';
 @import 'journal/journal';
