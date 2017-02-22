@@ -23,7 +23,10 @@ export class LogsComponent {
         {"visible": false},
         {"orderable": false},
         {"orderable": false}
-      ]
+      ],
+      "initComplete" : () => {
+        this.dtRendered = true;
+      }
     };
 
     adminSvr.getJournalPropertyLogs()
