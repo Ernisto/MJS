@@ -8,20 +8,15 @@ export default angular.module('mjsApp.datatable', [])
     return {
       restrict: 'A',
       scope: {
-        dtReady: '=',
-        dtConfig: '=',
-        dtRendered: '='
+        dtData: '=',
+        dtConfig: '='
       },
       link: function (scope, element, attrs) {
-        scope.$watch('dtReady', function (newValue) {
+        scope.$watch('dtData', function (newValue) {
           if (newValue) {
-            $timeout(() => $(element).DataTable(angular.merge(scope.dtConfig, {
-              "initComplete": function (settings, json) {
-                scope.dtRendered = true;
-              }
-            })));
+            $timeout(() => $(element).DataTable(scope.dtConfig));
 
-            /** For debugging purpose compare quantity of tr's in tbody **/
+            /** For debugging purpose compare quantity of tr's in tbody with array length **/
             // console.log($(element).children('tbody').children('tr').length);
           }
         });
