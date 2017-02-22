@@ -5,7 +5,7 @@ const uiRouter = require('angular-ui-router');
 
 import routes from './admin.routes';
 
-import './config';
+import {initialize} from './config';
 
 export class AdminComponent {
   /*@ngInject*/
@@ -26,8 +26,7 @@ export class AdminComponent {
     /** Apply layout fixes on load **/
     angular.element(document).ready(function () {
       $timeout(function () {
-        $.AdminLTE.layout.fix();
-        $.AdminLTE.layout.fixSidebar();
+        initialize();
       });
     });
   }
