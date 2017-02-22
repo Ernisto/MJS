@@ -31,7 +31,11 @@ import admin from './admin/admin.component';
 import adminService from './admin/service/admin.service';
 import adminNavbar from './admin/admin-navbar/admin-navbar.component';
 import adminFooter from './admin/admin-footer/admin-footer.component';
-import logs from './admin/logs/logs.component';
+import adminUsers from './admin/users/users.component';
+import adminLogs from './admin/logs/logs.component';
+import adminArchives from './admin/archives/archives.component';
+import adminJournals from './admin/journals/journals.component';
+import adminMonitoring from './admin/monitoring/monitoring.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
@@ -45,6 +49,7 @@ import archive from './archives/archive/archive.component';
 import archiveService from './archives/service/archive.service';
 import dashboard from './dashboard/dashboard.component';
 import submission from './submission/submission.component';
+import progressBar from '../components/progress-bar/progress-bar.directive';
 import './scripts';
 
 import './app.scss';
@@ -56,10 +61,10 @@ angular.module('mjsApp', [
   // ngMessages,
 
   // ngValidationMatch,
-  _Auth, Modal, wysiwygEditor, datatable, account, admin, adminService,
-  adminNavbar, adminFooter, logs, navbar, footer, main,
-  constants, socket, util, dashboard, submission, journal, journalService,
-  archives, archive, archiveService
+  _Auth, Modal, wysiwygEditor, datatable, account, admin, adminUsers, adminArchives,
+  adminJournals, adminMonitoring, adminService, adminNavbar, adminFooter, adminLogs, navbar,
+  footer, main, constants, socket, util, dashboard, submission, journal, journalService,
+  archives, archive, archiveService, progressBar
 ])
   .config(routeConfig)
   .controller('RootController', function ($rootScope) {
