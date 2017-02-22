@@ -6,17 +6,7 @@ export default angular.module('mjsApp.progressBar', [])
     return {
       template: require('./progress-bar.html'),
       restrict: 'EA',
-      scope: {
-        isVisible: '='
-      },
-      link: function(scope, element, attrs) {
-        scope.$watch('isVisible', (newValue) =>{
-          console.log(newValue);
-          if(newValue) {
-            scope.isVisible = newValue;
-          }
-        })
-      }
+      link: function(scope, element, attrs) {}
     };
   })
   .name;
