@@ -1,7 +1,7 @@
 'use strict';
 
 import angular from 'angular';
-// import ngAnimate from 'angular-animate';
+import ngAnimate from 'angular-animate';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
@@ -55,7 +55,7 @@ import './scripts';
 import './app.scss';
 
 angular.module('mjsApp', [
-  // ngAnimate,
+  ngAnimate,
   ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
   'pascalprecht.translate', 'oitozero.ngSweetAlert', 'LocalStorageModule',
   // ngMessages,
