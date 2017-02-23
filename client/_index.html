@@ -29,9 +29,9 @@
       ga('send', 'pageview');
     </script>
 
-    <navbar ng-if="rootCtrl.layout === 'default'"></navbar>
+    <navbar ng-show="rootCtrl.layout === 'default'"></navbar>
     <div ui-view="" class="main-content"></div>
-    <footer class="footer" ng-if="rootCtrl.layout === 'default'"></footer>
+    <footer class="footer" ng-show="rootCtrl.layout === 'default'"></footer>
     <div class="modal-parent"></div>
 </body>
 </html>
