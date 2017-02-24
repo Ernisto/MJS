@@ -6,6 +6,9 @@ export function archiveService($http, $stateParams) {
   var archivesCache = {};
 
   return {
+    getArchives() {
+      return $http.get(`/api/archives`);
+    },
     getArchivesByJournalId(journalId, fromCache) {
       return fromCache ? archivesCache[journalId] : $http.get(`/api/archives/journals/${journalId}`);
     },
