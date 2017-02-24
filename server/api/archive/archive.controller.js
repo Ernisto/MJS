@@ -67,7 +67,7 @@ function handleError(res, statusCode) {
 export function index(req, res) {
   return Archive.find()
     .populate({
-      path: 'journal', select: 'abbreviation'
+      path: 'journal', select: 'abbreviation color'
     })
     .exec()
     .then(respondWithResult(res))
