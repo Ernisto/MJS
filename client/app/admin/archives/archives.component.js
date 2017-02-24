@@ -3,8 +3,29 @@ const angular = require('angular');
 
 export class ArchivesComponent {
   /*@ngInject*/
-  constructor() {
-    this.message = 'Hello';
+  constructor(archiveSvr) {
+    'ngInject';
+
+    this.archiveSvr = archiveSvr;
+    this.config = {
+      "columns": [
+        null,
+        null,
+        null,
+        {"orderData": 4},
+        {"visible": false},
+        {"orderable": false},
+        {"orderable": false}
+      ],
+      "initComplete": () => {
+        this.dtRendered = true;
+      }
+    };
+
+    archiveSvr.getArchives()
+      .then((res) => {
+        this.archives = res.data;
+      });
   }
 }
 
