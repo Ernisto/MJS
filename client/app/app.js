@@ -50,6 +50,7 @@ import archiveService from './archives/service/archive.service';
 import dashboard from './dashboard/dashboard.component';
 import submission from './submission/submission.component';
 import progressBar from '../components/progress-bar/progress-bar.directive';
+import timestamp from '../components/timestamp/timestamp.filter';
 import './scripts';
 
 import './app.scss';
@@ -64,7 +65,7 @@ angular.module('mjsApp', [
   _Auth, Modal, wysiwygEditor, datatable, account, admin, adminUsers, adminArchives,
   adminJournals, adminMonitoring, adminService, adminNavbar, adminFooter, adminLogs, navbar,
   footer, main, constants, socket, util, dashboard, submission, journal, journalService,
-  archives, archive, archiveService, progressBar
+  archives, archive, archiveService, progressBar, timestamp
 ])
   .config(routeConfig)
   .controller('RootController', function ($rootScope) {
