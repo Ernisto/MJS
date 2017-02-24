@@ -14,7 +14,23 @@ export default angular.module('mjsApp.datatable', [])
       link: function (scope, element, attrs) {
         scope.$watch('dtData', function (newValue) {
           if (newValue) {
-            $timeout(() => $(element).DataTable(scope.dtConfig));
+            $timeout(() => {
+
+              var table = $(element).DataTable(scope.dtConfig);
+
+              table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                  if ( that.search() !== this.value ) {
+                    that
+                      .search( this.value )
+                      .draw();
+                  }
+                } );
+              } );
+
+            });
 
             /** For debugging purpose compare quantity of tr's in tbody with array length **/
             // console.log($(element).children('tbody').children('tr').length);
