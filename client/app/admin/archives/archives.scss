@@ -1,3 +1,5 @@
+@import '~ng-tags-input/build/ng-tags-input.css';
+
 .archive-item__title {
   font-size: 12pt;
   color: #474747;
@@ -20,4 +22,120 @@
 .archive-item__journal {
   font-size: 12pt;
   font-weight: 500;
+}
+
+.sortable-ghost {
+  background-color: #fff!important;
+  color: #fff;
+  opacity: 1;
+  border: 1px dashed #2d8722;
+  padding: 4px!important;
+
+  span {
+    color: #fff;
+    background-color: #fff;
+  }
+}
+
+.sortable-drag {
+  opacity: 1!important;
+}
+
+.chosen-item {
+  //background-color: #29a82f !important;
+  .tools {
+    display: none!important;
+  }
+}
+
+.sortable-fallback {
+  background-color: blue!important;
+}
+
+.authors-list {
+  padding: 0;
+  margin: 0;
+  cursor: move;
+  list-style: none;
+}
+
+.authors-list li {
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background: #abf4ee;
+  color: #444;
+
+  .tools {
+    float: right;
+    cursor: pointer;
+    font-size: 11pt;
+    color: red;
+    display: none;
+  }
+}
+
+.authors-list li:hover {
+  background-color: lightgreen;
+  .tools {
+    display: block;
+  }
+}
+
+.author-index {
+  color: darkblue;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.archive-input {
+  padding-right: 0;
+}
+
+.archive-input__text-field {
+  height: 30px;
+}
+
+.archive-input__button {
+  float: right;
+  margin-top: 5px;
+}
+
+.references-list {
+  font-size: 10pt;
+  list-style: none;
+  cursor: move;
+  padding-left: 0;
+  padding-right: 0;
+
+  .references-item {
+    position: relative;
+  }
+}
+
+.references-list li:hover{
+  .tools {
+    display: block;
+    float: right;
+  }
+}
+
+.references-list li{
+  background-color: #8cec97;
+  margin: 3px 0;
+  padding: 5px 20px 5px 5px;
+  border-radius: 3px;
+
+  .reference {
+    word-wrap:break-word;
+  }
+
+  .tools {
+    cursor: pointer;
+    color: red;
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }

@@ -1,0 +1,95 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$dismiss()">
+    <span aria-hidden="true">×</span></button>
+  <h4 class="modal-title">{{title}}</h4>
+</div>
+<div class="modal-body">
+  <!-- form start -->
+  <form class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <label for="archive-title" class="col-sm-2 control-label">Title</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="archive.title" id="archive-title"
+                 placeholder="Please write title">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Keywords</label>
+
+        <div class="col-sm-10">
+          <!--<select type="text" class="form-control" ng-model="archive.title" id="archive-keywords"-->
+                  <!--placeholder="Please write title">-->
+
+          <!--</select>-->
+
+          <tags-input id="archive-keywords" ng-model="archive.keywords"></tags-input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="archive-date" class="col-sm-2 control-label">Date</label>
+
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="archive-date" ng-model="archive.date" placeholder="Select Date">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Journal</label>
+        <div class="col-sm-10">
+          <select class="form-control"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ng-options="journal.title.gb for journal in journals track by journal._id"
+                  ng-model="archive.journal">
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Authors</label>
+        <div class="col-sm-10">
+          <ul class="authors-list col-sm-6" ui-sortable ng-model="archive.authors">
+            <li class="" ng-repeat="author in archive.authors track by $index">
+              <span class="author-index">{{$index + 1}}</span>
+              <span class="text author-name">{{author}}</span>
+              <div class="tools js-remove" ng-click="remove(author, archive.authors)">
+                <i class="fa fa-remove"></i>
+              </div>
+            </li>
+          </ul>
+          <div class="archive-input col-sm-6">
+            <input type="text" class="form-control archive-input__input" ng-model="newAuthor">
+            <button type="button" class="btn btn-success btn-sm archive-input__button" ng-click="add(newAuthor, archive.authors)">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="archive-date" class="col-sm-2 control-label">File</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="archive-file" ng-model="archive.file" placeholder="Select Date">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-12">References</label>
+        <div class="col-sm-12">
+          <ul class="references-list col-sm-12" ui-sortable ng-model="archive.references">
+            <li class="references-item" ng-repeat="reference in archive.references track by $index">
+              <span class="author-index">[{{$index + 1}}]</span>
+              <span class="text reference">{{reference}}</span>
+              <div class="tools js-remove" ng-click="remove(reference, archive.references)">
+                <i class="fa fa-remove"></i>
+              </div>
+            </li>
+          </ul>
+          <input type="text" class="form-control archive-input__text-field" ng-model="newReference">
+          <button type="button" class="btn btn-success btn-sm archive-input__button" ng-click="add(newReference, archive.references)">Add</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-warning" type="button" ng-click="$close()">Cancel</button>
+  <button class="btn btn-primary" type="button" ng-click="submit(archive)">OK</button>
+</div>
