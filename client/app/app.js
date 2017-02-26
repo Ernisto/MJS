@@ -11,6 +11,8 @@ import 'angular-translate-loader-static-files';
 import 'angular-sweetalert';
 import 'angular-local-storage';
 import 'sweetalert';
+import 'angular-ui-sortable';
+import 'ng-tags-input';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -58,7 +60,7 @@ import './app.scss';
 angular.module('mjsApp', [
   ngAnimate,
   ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
-  'pascalprecht.translate', 'oitozero.ngSweetAlert', 'LocalStorageModule',
+  'pascalprecht.translate', 'oitozero.ngSweetAlert', 'LocalStorageModule', 'ui.sortable', 'ngTagsInput',
   // ngMessages,
 
   // ngValidationMatch,
