@@ -26,6 +26,9 @@ export function archiveService($http, $stateParams) {
     },
     setArchive(archive) {
       archivesCache[archive._id] = archive;
+    },
+    updateArchive(archiveId, updates) {
+      return $http.put(`/api/archives/${archiveId}`, updates);
     }
   };
 }

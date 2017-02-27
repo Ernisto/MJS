@@ -50,24 +50,29 @@ export class ArchivesComponent {
       },
       editItem: item => console.log(item),
       add: (item, collection) => {
-        if(item) {
+        if (item) {
           collection.indexOf(item) > -1 ? null : collection.push(item);
         }
       },
       submit: archive => {
-        console.log(archive);
+        archive.journal = archive.journal._id;
+        archive.keywords = archive.keywords.map(keyword => keyword.text);
+        this.archiveSvr.updateArchive(archive._id, archive)
+          .then(res => {
+            modal.close();
+          });
       },
       title: 'Edit Archive'
     });
 
-    this.$uibModal.open({
+    let modal = this.$uibModal.open({
       animation: true,
       template: require('./edit.html'),
       windowClass: 'modal-default',
       appendTo: angular.element(document.querySelector('.modal-parent')),
       size: 'lg',
       scope: modalScope
-    });
+      });
   }
 }
 
