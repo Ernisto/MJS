@@ -101,8 +101,7 @@ export function upsert(req, res) {
   if(req.body._id) {
     delete req.body._id;
   }
-  return Archive.findOneAndUpdate(req.params.id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
-
+  return Archive.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
